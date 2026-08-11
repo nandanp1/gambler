@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DCD2FF"/>
+      <stop offset="1" stop-color="#A08EFF"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A08EFF"/>
+      <stop offset="1" stop-color="#8264F2"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE9AE"/>
+      <stop offset="1" stop-color="#FFC53D"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="32" stdDeviation="26" flood-color="#47318F" flood-opacity=".34"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="228" fill="#F7F5FF"/>
+  <circle cx="512" cy="480" r="356" fill="url(#bg)"/>
+  <ellipse cx="400" cy="300" rx="190" ry="105" fill="#fff" opacity=".22" transform="rotate(-24 400 300)"/>
+  <g filter="url(#shadow)">
+    <g transform="translate(248 260) rotate(-13 170 235)">
+      <rect width="300" height="430" rx="58" fill="#FDFBFF"/>
+      <path d="M0 58Q0 0 58 0H242Q300 0 300 58" fill="#fff" opacity=".8"/>
+      <text x="50" y="112" font-family="Nunito,Arial,sans-serif" font-size="82" font-weight="900" fill="#171727">A</text>
+      <text x="190" y="368" font-family="Arial,sans-serif" font-size="116" font-weight="900" fill="#171727">♠</text>
+    </g>
+    <g transform="translate(475 286) rotate(12 170 235)">
+      <rect width="300" height="430" rx="58" fill="#FDFBFF"/>
+      <path d="M0 58Q0 0 58 0H242Q300 0 300 58" fill="#fff" opacity=".8"/>
+      <text x="50" y="112" font-family="Nunito,Arial,sans-serif" font-size="82" font-weight="900" fill="#F0556B">K</text>
+      <text x="183" y="368" font-family="Arial,sans-serif" font-size="116" font-weight="900" fill="#F0556B">♥</text>
+    </g>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="526" cy="735" r="132" fill="#D99A16"/>
+    <circle cx="526" cy="716" r="132" fill="url(#gold)" stroke="#FFF0BC" stroke-width="18"/>
+    <text x="526" y="770" text-anchor="middle" font-family="Baloo 2,Nunito,Arial,sans-serif" font-size="166" font-weight="800" fill="#B8791A">C</text>
+    <ellipse cx="482" cy="662" rx="48" ry="18" fill="#fff" opacity=".48" transform="rotate(-25 482 662)"/>
+  </g>
+  <path d="M257 793C360 881 673 893 790 775" fill="none" stroke="url(#purple)" stroke-linecap="round" stroke-width="34" opacity=".5"/>
+</svg>

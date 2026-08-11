@@ -1,0 +1,1792 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 You are a senior mobile game engineer and product engineer.\
+\
+Your job is to take the attached design file:\
+\
+Nandans Gambler.dc.html\
+\
+and turn it into a COMPLETE, RUNNABLE, POLISHED MOBILE APP.\
+\
+Do not merely recreate screenshots.\
+\
+Build the actual app, navigation, state management, wallet, animations, game logic, persistence, interactions, and all screens represented by the design.\
+\
+==================================================\
+0. PRODUCT DEFINITION\
+==================================================\
+\
+App name:\
+Nandan's Gambler\
+\
+This is a PLAY-MONEY / SOCIAL CASINO GAME.\
+\
+There is:\
+- NO real-money gambling\
+- NO deposits\
+- NO withdrawals\
+- NO cash-out\
+- NO cryptocurrency\
+- NO purchasable cash-equivalent balance\
+- NO financial accounts\
+\
+All coins are fictional in-app currency.\
+\
+The app should feel like:\
+- a polished mobile arcade\
+- tactile\
+- playful\
+- highly animated\
+- premium\
+- claymorphic\
+- extremely responsive\
+\
+The attached HTML design is the SOURCE OF TRUTH for the visual design.\
+\
+Study it carefully before writing implementation code.\
+\
+Do not redesign the product unless necessary for native/mobile behavior.\
+\
+==================================================\
+1. FIRST TASK: ANALYZE THE DESIGN FILE\
+==================================================\
+\
+Before implementing:\
+\
+1. Read the entire attached HTML design file.\
+2. Inventory every screen.\
+3. Extract the design tokens.\
+4. Identify reusable components.\
+5. Identify navigation relationships.\
+6. Identify every interactive element.\
+7. Identify all game states represented.\
+8. Identify typography, colors, gradients, shadows, radii and spacing.\
+9. Convert repeated HTML/CSS patterns into reusable app components.\
+\
+Do NOT simply embed the HTML into a WebView.\
+\
+Do NOT ship the HTML design as the app.\
+\
+Rebuild it properly using native app components.\
+\
+==================================================\
+2. TECHNOLOGY\
+==================================================\
+\
+Use:\
+\
+- React Native\
+- Expo\
+- TypeScript\
+- Expo Router\
+- React Native Reanimated\
+- React Native Gesture Handler\
+- React Native SVG\
+- Expo Haptics\
+- AsyncStorage for local persistence\
+\
+Use React Native Skia where it materially improves game rendering or animation, especially for:\
+\
+- Plinko\
+- Roulette animation\
+- particles\
+- slot reels\
+- custom game boards\
+\
+Avoid adding unnecessary dependencies.\
+\
+The project must run with:\
+\
+npm install\
+npx expo start\
+\
+Keep the project compatible with current stable Expo.\
+\
+==================================================\
+3. PROJECT STRUCTURE\
+==================================================\
+\
+Use a clean architecture approximately like:\
+\
+app/\
+  _layout.tsx\
+\
+  index.tsx\
+\
+  onboarding/\
+    index.tsx\
+\
+  tabs/\
+    _layout.tsx\
+    home.tsx\
+    games.tsx\
+    rewards.tsx\
+    profile.tsx\
+\
+  game/\
+    blackjack.tsx\
+    roulette.tsx\
+    slots.tsx\
+    plinko.tsx\
+    mines.tsx\
+    dice.tsx\
+    crash.tsx\
+    wheel.tsx\
+    baccarat.tsx\
+    video-poker.tsx\
+    hilo.tsx\
+    keno.tsx\
+    limbo.tsx\
+    towers.tsx\
+    coin-flip.tsx\
+\
+  rewards/\
+    daily.tsx\
+    achievements.tsx\
+\
+  profile/\
+    statistics.tsx\
+    settings.tsx\
+\
+components/\
+  ClayButton.tsx\
+  ClayCard.tsx\
+  ClayIconButton.tsx\
+  BalancePill.tsx\
+  BottomNav.tsx\
+  GameTile.tsx\
+  GameHeader.tsx\
+  BetControl.tsx\
+  Chip.tsx\
+  CategoryChip.tsx\
+  SearchBar.tsx\
+  ProgressBar.tsx\
+  ModalSheet.tsx\
+  WinOverlay.tsx\
+  CoinIcon.tsx\
+  PlayingCard.tsx\
+\
+components/game/\
+  ...\
+\
+store/\
+  wallet.ts\
+  profile.ts\
+  rewards.ts\
+  stats.ts\
+\
+games/\
+  blackjack/\
+    engine.ts\
+    types.ts\
+  roulette/\
+    engine.ts\
+  slots/\
+    engine.ts\
+  mines/\
+    engine.ts\
+  plinko/\
+    engine.ts\
+  ...\
+\
+theme/\
+  colors.ts\
+  typography.ts\
+  spacing.ts\
+  radius.ts\
+  shadows.ts\
+\
+utils/\
+  random.ts\
+  payout.ts\
+  storage.ts\
+  haptics.ts\
+\
+types/\
+  index.ts\
+\
+==================================================\
+4. DESIGN SYSTEM \'97 MATCH THE ATTACHED FILE\
+==================================================\
+\
+The HTML file contains the exact intended visual direction.\
+\
+Preserve it closely.\
+\
+Core colors:\
+\
+canvas:\
+#F7F5FF\
+\
+app board surrounding background:\
+#E9E4F8\
+\
+primary purple:\
+#8F7CF7\
+\
+purple dark:\
+#8264F2\
+\
+blue:\
+#65B9FF\
+\
+pink:\
+#FF91BD\
+\
+mint:\
+#71DFC0\
+\
+yellow:\
+#FFD966\
+\
+coral:\
+#FF867A\
+\
+text:\
+#171727\
+\
+secondary text:\
+approximately #77758A / #8C88A6 / #9A95B8\
+\
+Fonts:\
+\
+Display:\
+Baloo 2\
+weights 600 / 700 / 800\
+\
+UI:\
+Nunito\
+weights 400 / 600 / 700 / 800 / 900\
+\
+Use Expo Google Fonts if appropriate.\
+\
+==================================================\
+5. CLAYMORPHISM\
+==================================================\
+\
+Claymorphism is NOT optional.\
+\
+Reproduce the attached design language carefully:\
+\
+- large rounded surfaces\
+- layered shadows\
+- subtle top highlights\
+- darker bottom edge\
+- inset shadows where appropriate\
+- soft gradients\
+- tactile circular chips\
+- raised cards\
+- depressed inputs\
+- thick pill controls\
+\
+Typical radii:\
+\
+small controls:\
+12\'9618\
+\
+buttons:\
+20\'9626\
+\
+cards:\
+24\'9630\
+\
+large game surfaces:\
+30\'9636\
+\
+Use helper components so clay styling is consistent.\
+\
+For buttons:\
+\
+idle:\
+raised\
+\
+pressed:\
+- scale to about 0.96\
+- translate downward slightly\
+- reduce outer shadow\
+- increase inner shadow\
+\
+release:\
+spring back\
+\
+Use Reanimated springs.\
+\
+==================================================\
+6. DEVICE LAYOUT\
+==================================================\
+\
+The design was created around:\
+\
+390 \'d7 844\
+\
+Use that as the reference viewport.\
+\
+But the implementation MUST respond correctly to:\
+\
+- smaller iPhones\
+- larger iPhones\
+- Android devices\
+- safe areas\
+- different status bar heights\
+\
+Do not hardcode every element using absolute positioning.\
+\
+Use Flexbox and responsive sizing.\
+\
+Absolute positioning is acceptable inside custom game illustrations where needed.\
+\
+==================================================\
+7. ONBOARDING\
+==================================================\
+\
+Implement the exact three-screen onboarding:\
+\
+SCREEN 1\
+Pick your game.\
+\
+Text:\
+Twenty-two original games, from blackjack to plinko, all in one tidy arcade.\
+\
+Artwork:\
+- cards\
+- dice\
+- wheel\
+- coin\
+- lavender clay circle\
+\
+SCREEN 2\
+Play your way.\
+\
+Text:\
+Set your stake, choose your risk level, and change your mind whenever you like.\
+\
+Artwork:\
+- clay chips\
+- sliders\
+- toggles\
+- dice\
+- blue circle\
+\
+SCREEN 3\
+Collect rewards.\
+\
+Text:\
+Daily bonuses, streaks and achievements keep your coin balance topped up.\
+\
+Artwork:\
+- clay gift box\
+- coins\
+- trophy\
+- pink circle\
+\
+Interactions:\
+\
+Next\
+Next\
+Get Started\
+\
+Skip should skip onboarding.\
+\
+Persist:\
+hasCompletedOnboarding\
+\
+After first completion, launch directly into Home.\
+\
+==================================================\
+8. MAIN NAVIGATION\
+==================================================\
+\
+Bottom nav:\
+\
+Home\
+Games\
+Rewards\
+Profile\
+\
+Match the floating clay bottom nav from the design.\
+\
+Selected tab:\
+- raised purple pill\
+- white icon\
+- white text\
+- stronger shadow\
+\
+Inactive:\
+- transparent surface\
+- muted lavender icon/text\
+\
+Add spring transition when switching tabs.\
+\
+==================================================\
+9. GLOBAL WALLET\
+==================================================\
+\
+Starting fictional balance:\
+\
+10,642 coins\
+\
+Implement a central wallet store.\
+\
+Required operations:\
+\
+getBalance()\
+debit(amount)\
+credit(amount)\
+canAfford(amount)\
+\
+Balance changes should animate.\
+\
+If balance increases:\
+- briefly show green\
+- animate number upward\
+- subtle haptic\
+\
+If balance decreases:\
+- brief scale/change animation\
+\
+Persist wallet locally.\
+\
+NEVER allow negative balance.\
+\
+If a user cannot afford a bet:\
+show a clay toast:\
+\'93Not enough coins\'94\
+\
+==================================================\
+10. HOME SCREEN\
+==================================================\
+\
+Match the design.\
+\
+Header:\
+avatar\
+Good evening\
+Nandan\
+\
+Balance:\
+10,642\
+\
+Notification icon\
+\
+Headline:\
+What do you want to play?\
+\
+Search field\
+\
+Categories:\
+\
+Featured\
+Originals\
+Table\
+Slots\
+Quick\
+\
+Game tiles shown initially:\
+\
+Blackjack\
+Dice\
+Mines\
+Plinko\
+Slots\
+Roulette\
+\
+Add the remaining games below when scrolling.\
+\
+Each game tile must be tappable.\
+\
+Use the same color identities shown in the design.\
+\
+Examples:\
+\
+Blackjack:\
+coral\
+\
+Dice:\
+blue\
+\
+Mines:\
+mint\
+\
+Plinko:\
+purple\
+\
+Slots:\
+pink\
+\
+Roulette:\
+blue\
+\
+Crash:\
+yellow/orange\
+\
+Use actual componentized clay artwork rather than plain emojis.\
+\
+==================================================\
+11. ALL GAMES\
+==================================================\
+\
+All Games screen.\
+\
+Search placeholder:\
+\
+Search 22 games\
+\
+Categories:\
+\
+Featured\
+Originals\
+Table\
+Slots\
+Arcade\
+\
+Include at least:\
+\
+Blackjack\
+Roulette\
+Baccarat\
+Video Poker\
+Slots\
+Plinko\
+Mines\
+Crash\
+Dice\
+Limbo\
+Keno\
+Hi-Lo\
+Wheel\
+Towers\
+Coin Flip\
+Diamonds\
+Roshambo\
+Dragon Tower\
+Poker\
+Scratch game\
+\
+Search must actually filter.\
+\
+Category chips must actually filter.\
+\
+Tapping a card opens its game.\
+\
+==================================================\
+12. BLACKJACK \'97 FULL IMPLEMENTATION\
+==================================================\
+\
+Build real Blackjack logic using virtual coins.\
+\
+Use a standard 52-card deck.\
+\
+Support:\
+\
+- shuffled deck\
+- player\
+- dealer\
+- hit\
+- stand\
+- double\
+- split where valid\
+- dealer hits until 17+\
+- Ace = 1 or 11\
+- blackjack recognition\
+- bust\
+- push\
+- win\
+- loss\
+\
+Recommended payout:\
+\
+normal win:\
+1:1\
+\
+blackjack:\
+3:2\
+\
+push:\
+return stake\
+\
+Double:\
+double stake and exactly one additional card\
+\
+Split:\
+create two hands and play independently\
+\
+Use sensible rules.\
+\
+UI:\
+\
+Match the supplied Blackjack screen.\
+\
+Dealer area\
+Player area\
+Totals\
+\
+Bet controls:\
+\
+-\
+amount\
++\
+\
+chips:\
+\
+10\
+25\
+50\
+100\
+500\
+\
+Actions:\
+\
+Hit\
+Stand\
+Double\
+Split\
+\
+Animate dealt cards:\
+\
+- slide from deck origin\
+- slight rotation\
+- spring landing\
+- staggered timing\
+\
+Haptic on card deal.\
+\
+WIN STATE:\
+\
+Use the supplied Blackjack Win screen.\
+\
+Show:\
++ amount\
+\
+Confetti:\
+subtle pastel clay particles\
+\
+Balance animates.\
+\
+Buttons:\
+\
+Play again\
+Change bet\
+Leave table\
+\
+Also implement:\
+loss\
+push\
+blackjack\
+bust\
+\
+==================================================\
+13. ROULETTE \'97 FULL IMPLEMENTATION\
+==================================================\
+\
+Implement European roulette:\
+\
+0\'9636\
+\
+One green zero.\
+\
+Support at minimum:\
+\
+single number\
+red\
+black\
+odd\
+even\
+1\'9618\
+19\'9636\
+\
+Recommended payouts:\
+\
+single number:\
+35:1\
+\
+red/black:\
+1:1\
+\
+odd/even:\
+1:1\
+\
+low/high:\
+1:1\
+\
+Build correct red/black mapping.\
+\
+Wheel:\
+\
+visually close to supplied design.\
+\
+Create actual spinning animation:\
+\
+- accelerate\
+- spin several rotations\
+- decelerate\
+- land on selected number\
+\
+Do not select the result after animation.\
+\
+Instead:\
+\
+1. determine random winning number\
+2. calculate target rotation\
+3. animate wheel to that target\
+\
+Show recent results history.\
+\
+Chips:\
+10\
+50\
+100\
+\
+Controls:\
+clear\
+repeat\
+spin\
+\
+Debit bets when spinning.\
+\
+Credit payout afterward.\
+\
+==================================================\
+14. SLOTS \'97 FULL IMPLEMENTATION\
+==================================================\
+\
+Game title:\
+Clay Reels\
+\
+Start with:\
+\
+3 reels\
+1 payline\
+\
+Symbols:\
+\
+7\
+heart\
+diamond\
+star\
+bell\
+cherry\
+crown\
+\
+Use weighted random outcomes.\
+\
+Do not fake winning after the fact.\
+\
+Generate reel result first.\
+\
+Animate reels independently:\
+\
+reel 1 stops\
+reel 2 stops\
+reel 3 stops\
+\
+Use realistic deceleration.\
+\
+Bet per spin.\
+\
+Buttons:\
+-\
++\
+Spin\
+Auto Spin\
+Paytable\
+\
+Implement Auto Spin with user-defined sensible count or toggle.\
+\
+Stop Auto Spin:\
+- on insufficient balance\
+- when user disables it\
+- optionally on large win\
+\
+Use a paytable.\
+\
+Example:\
+\
+777:\
+100x\
+\
+three crowns:\
+30x\
+\
+three diamonds:\
+20x\
+\
+three stars:\
+10x\
+\
+three hearts:\
+8x\
+\
+three cherries:\
+5x\
+\
+two matching:\
+small payout if desired\
+\
+Use the exact Jackpot design state for major wins.\
+\
+Show:\
+Jackpot!\
++5,000 style display\
+\
+Animate:\
+particles\
+coin burst\
+reels glow\
+balance increase\
+\
+==================================================\
+15. PLINKO \'97 FULL IMPLEMENTATION\
+==================================================\
+\
+Build Plinko as an actual interactive game.\
+\
+Controls:\
+\
+Bet\
+Risk:\
+Low\
+Med\
+High\
+\
+Rows:\
+select number of rows\
+\
+Drop Ball\
+\
+Use either:\
+- Skia physics\
+or\
+- a deterministic visual simulation matching generated outcome\
+\
+The ball should:\
+\
+- fall\
+- bounce left/right through pegs\
+- end in a multiplier bucket\
+\
+The generated path and final bucket must agree.\
+\
+Use multiplier distributions depending on risk.\
+\
+For example, medium 6-row board similar to design:\
+\
+10x\
+3x\
+1.4x\
+0.5x\
+1.4x\
+3x\
+10x\
+\
+Create statistically sensible probabilities.\
+\
+Debit before drop.\
+Credit payout at landing.\
+\
+Add tiny squash animation on peg impacts.\
+\
+==================================================\
+16. MINES \'97 FULL IMPLEMENTATION\
+==================================================\
+\
+5 \'d7 5 grid.\
+\
+User chooses:\
+\
+Bet\
+Number of mines\
+\
+When starting:\
+\
+- randomly assign mine locations\
+- never reassign during round\
+\
+Tile states:\
+\
+hidden\
+safe\
+mine\
+\
+When safe tile pressed:\
+reveal gem\
+\
+Update:\
+- next multiplier\
+- estimated profit\
+- cash-out value\
+\
+When mine pressed:\
+- reveal mine\
+- lose stake\
+- reveal remaining mines\
+- end round\
+\
+Cash Out:\
+credit current payout\
+\
+Use mathematically sensible multiplier progression based on probability.\
+\
+Do not predetermine user clicks.\
+\
+The design shows:\
+\
+Mines\
+Next\
+Profit\
+\
+and an active Cash Out state.\
+\
+Match this visually.\
+\
+==================================================\
+17. DICE\
+==================================================\
+\
+Implement Dice.\
+\
+Controls:\
+\
+Bet\
+target value\
+roll over / roll under\
+chance\
+multiplier\
+\
+Generate random number:\
+0.00\'9699.99\
+\
+Example:\
+\
+Roll Under 50\
+wins if result < 50\
+\
+Calculate payout using house-free or small play-money edge.\
+\
+Animate clay dice during roll.\
+\
+==================================================\
+18. CRASH\
+==================================================\
+\
+Implement a simple play-money Crash game.\
+\
+User selects:\
+\
+bet\
+optional auto cash-out\
+\
+Start multiplier:\
+1.00x\
+\
+Multiplier rises over time.\
+\
+Generate crash point before round starts.\
+\
+User taps:\
+Cash Out\
+\
+If cashed out before crash:\
+balance += bet \'d7 multiplier\
+\
+If crash occurs first:\
+lose bet\
+\
+Animate a cute clay rocket or object rising.\
+\
+Do NOT style it as financial trading.\
+\
+==================================================\
+19. WHEEL\
+==================================================\
+\
+Large clay wheel.\
+\
+Player chooses bet.\
+\
+Wheel contains payout segments.\
+\
+Determine result before animation.\
+\
+Animate the wheel with multiple rotations.\
+\
+Land precisely on selected reward.\
+\
+==================================================\
+20. BACCARAT\
+==================================================\
+\
+Implement simplified Punto Banco Baccarat.\
+\
+Support bets:\
+\
+Player\
+Banker\
+Tie\
+\
+Deal according to standard drawing rules.\
+\
+Payouts:\
+\
+Player:\
+1:1\
+\
+Banker:\
+0.95:1 or simplify to 1:1 for play money\
+\
+Tie:\
+8:1\
+\
+Animate cards.\
+\
+==================================================\
+21. VIDEO POKER\
+==================================================\
+\
+Implement basic Jacks or Better.\
+\
+Flow:\
+\
+Bet\
+Deal 5 cards\
+tap cards to Hold\
+Draw\
+evaluate hand\
+payout\
+\
+Hands:\
+Royal Flush\
+Straight Flush\
+Four of a Kind\
+Full House\
+Flush\
+Straight\
+Three of a Kind\
+Two Pair\
+Jacks or Better\
+No Win\
+\
+==================================================\
+22. HI-LO\
+==================================================\
+\
+Show current card.\
+\
+User predicts:\
+\
+Higher\
+Lower\
+\
+Draw next card.\
+\
+Correct:\
+increase multiplier.\
+\
+Wrong:\
+round ends.\
+\
+Allow cash-out after correct predictions.\
+\
+==================================================\
+23. KENO\
+==================================================\
+\
+Allow selection from 1\'9640 or another sensible range.\
+\
+User chooses numbers.\
+\
+Draw random balls.\
+\
+Reward based on matches.\
+\
+Create a polished clay-ball reveal animation.\
+\
+==================================================\
+24. LIMBO\
+==================================================\
+\
+User enters target multiplier.\
+\
+Game secretly generates outcome.\
+\
+If generated value >= target:\
+win bet \'d7 target multiplier.\
+\
+Create a satisfying multiplier number animation.\
+\
+==================================================\
+25. TOWERS\
+==================================================\
+\
+Multi-row tower game.\
+\
+Each row presents several tiles.\
+\
+One or more are losing tiles depending on difficulty.\
+\
+Player chooses one tile per row.\
+\
+Safe:\
+advance upward.\
+\
+Loss:\
+round ends.\
+\
+Player can cash out anytime.\
+\
+==================================================\
+26. COIN FLIP\
+==================================================\
+\
+Player chooses:\
+\
+Heads\
+Tails\
+\
+Animate a clay coin flipping in 3D-like motion.\
+\
+50/50 outcome.\
+\
+Pay 2x total return or equivalent 1:1 profit.\
+\
+==================================================\
+27. OTHER GAMES\
+==================================================\
+\
+For lower-priority games such as:\
+\
+Diamonds\
+Roshambo\
+Dragon Tower\
+Scratch\
+\
+Implement simple but functional play-money versions.\
+\
+Do not leave dead cards.\
+\
+Every displayed game should either:\
+\
+1. be fully playable\
+\
+or\
+\
+2. clearly display a tasteful:\
+\'93Coming Soon\'94\
+\
+state.\
+\
+Prefer implementing them.\
+\
+==================================================\
+28. REWARDS\
+==================================================\
+\
+Match supplied Rewards design.\
+\
+Daily streak:\
+Day 1\'967\
+\
+Persist streak locally.\
+\
+Daily bonus:\
+claimable once per local calendar day.\
+\
+Example reward progression:\
+\
+Day 1: 250\
+Day 2: 300\
+Day 3: 400\
+Day 4: 500\
+Day 5: 650\
+Day 6: 800\
+Day 7: 1,500\
+\
+Daily Bonus card:\
+Ready to open\
+\
+Mystery Box:\
+time-gated local reward\
+\
+Weekly Challenge:\
+\
+Win 10 rounds\
+\
+Display:\
+6 of 10\
+\
+Reward:\
++2,000\
+\
+Achievements:\
+14 of 40 style presentation\
+\
+Build actual achievement tracking for examples:\
+\
+First Win\
+Play 10 Games\
+Play 100 Games\
+Win 5 Blackjack Hands\
+Hit Blackjack\
+Roulette Number Win\
+Plinko 10x\
+Mines 5 Safe Tiles\
+Slots Triple Seven\
+Win 5 Games in a Row\
+\
+==================================================\
+29. PROFILE\
+==================================================\
+\
+Match the supplied Profile screen.\
+\
+Avatar:\
+N\
+\
+Name:\
+Nandan\
+\
+Level:\
+12 initially, or calculate from XP while preserving visual target.\
+\
+Display:\
+\
+Games Played\
+Wins\
+Best Streak\
+Favourite\
+\
+Sections:\
+\
+Achievements\
+Statistics\
+Appearance\
+Sound & Haptics\
+\
+Track stats globally.\
+\
+XP:\
+grant XP for games played and wins.\
+\
+Make level system functional.\
+\
+==================================================\
+30. STATISTICS\
+==================================================\
+\
+Track per-game:\
+\
+plays\
+wins\
+losses\
+coins wagered\
+coins won\
+best result\
+\
+Global:\
+\
+games played\
+wins\
+win percentage\
+net fictional coins\
+favorite game\
+best streak\
+\
+Persist locally.\
+\
+==================================================\
+31. SETTINGS\
+==================================================\
+\
+Implement:\
+\
+Sound\
+Haptics\
+Reduced Motion\
+Reset Data\
+\
+Reset Data requires confirmation.\
+\
+Appearance:\
+keep default clay theme.\
+\
+Optionally support:\
+Light Clay\
+Lavender Clay\
+\
+Do not undermine visual consistency.\
+\
+==================================================\
+32. GAME HISTORY\
+==================================================\
+\
+Record recent activity.\
+\
+Each event:\
+\
+timestamp\
+game\
+bet\
+result\
+payout\
+net\
+\
+Use this for profile/statistics.\
+\
+Keep limited recent history locally.\
+\
+==================================================\
+33. ANIMATION REQUIREMENTS\
+==================================================\
+\
+Animations are a core part of the app.\
+\
+Use Reanimated.\
+\
+Global button interaction:\
+\
+on press in:\
+scale 0.96\
+translateY 2\
+shadow contracts\
+\
+on release:\
+spring back\
+\
+Game cards:\
+slight scale/lift\
+\
+Bottom navigation:\
+spring selection indicator\
+\
+Cards:\
+deal animation\
+\
+Dice:\
+roll\
+\
+Roulette:\
+spin inertia\
+\
+Slots:\
+reel spin\
+\
+Plinko:\
+fall/bounce\
+\
+Mines:\
+tile press / flip\
+\
+Coins:\
+bounce\
+\
+Win state:\
+particles\
+\
+Jackpot:\
+larger celebration\
+\
+Respect reduced motion settings.\
+\
+==================================================\
+34. HAPTICS\
+==================================================\
+\
+Use Expo Haptics.\
+\
+Examples:\
+\
+light:\
+normal button\
+\
+medium:\
+bet placed\
+\
+selection:\
+chip/category\
+\
+success:\
+win\
+\
+warning:\
+mine hit / bust\
+\
+Do not overuse haptics.\
+\
+==================================================\
+35. SOUND\
+==================================================\
+\
+Create a sound abstraction.\
+\
+If actual sound assets are unavailable initially:\
+build the sound manager and hooks anyway.\
+\
+Games should have event hooks like:\
+\
+playSound("cardDeal")\
+playSound("chip")\
+playSound("win")\
+playSound("lose")\
+playSound("rouletteSpin")\
+playSound("slotStop")\
+playSound("plinkoPeg")\
+\
+Sound can be toggled in Settings.\
+\
+==================================================\
+36. RANDOMNESS\
+==================================================\
+\
+Centralize random generation.\
+\
+Do not use suspicious logic like:\
+\
+if user lost three games:\
+    force win\
+\
+No adaptive outcomes.\
+\
+No fake near-miss manipulation.\
+\
+No altering outcomes based on user balance.\
+\
+Outcomes should be independent random play-money results.\
+\
+Create testable random utility functions.\
+\
+==================================================\
+37. GAME ENGINE SEPARATION\
+==================================================\
+\
+CRITICAL:\
+\
+Separate game logic from UI.\
+\
+Example:\
+\
+games/blackjack/engine.ts\
+\
+should calculate:\
+\
+deck\
+hands\
+scores\
+actions\
+result\
+payout\
+\
+The React component should render engine state.\
+\
+Do this for all substantive games.\
+\
+This lets us test game logic independently.\
+\
+==================================================\
+38. TESTING\
+==================================================\
+\
+Add unit tests for core engines.\
+\
+At minimum test:\
+\
+Blackjack:\
+- ace scoring\
+- dealer draw logic\
+- blackjack\
+- bust\
+- push\
+- payout\
+- double\
+\
+Roulette:\
+- number validation\
+- red/black mapping\
+- payout\
+\
+Slots:\
+- paytable evaluation\
+\
+Mines:\
+- mine placement\
+- safe reveal\
+- payout progression\
+\
+Plinko:\
+- multiplier lookup\
+\
+Wallet:\
+- debit\
+- credit\
+- insufficient funds\
+\
+==================================================\
+39. STATE / PERSISTENCE\
+==================================================\
+\
+Persist:\
+\
+onboarding state\
+coin balance\
+profile\
+XP\
+achievements\
+daily streak\
+daily bonus date\
+settings\
+statistics\
+recent history\
+\
+Use AsyncStorage.\
+\
+Make storage resilient to missing/corrupt values.\
+\
+==================================================\
+40. UX DETAILS\
+==================================================\
+\
+Never allow double taps to accidentally place multiple bets.\
+\
+Disable game controls while animation/result resolution is underway.\
+\
+Example:\
+\
+Roulette Spin button disabled while wheel spinning.\
+\
+Slots Spin disabled while reels spinning.\
+\
+Blackjack actions disabled during deal animation.\
+\
+Plinko Drop Ball disabled during current ball if single-ball mode.\
+\
+Show visual disabled state.\
+\
+==================================================\
+41. ACCESSIBILITY\
+==================================================\
+\
+Add meaningful accessibility labels.\
+\
+Examples:\
+\
+\'93Balance, ten thousand six hundred forty-two coins\'94\
+\
+\'93Blackjack Hit\'94\
+\
+\'93Roulette Spin\'94\
+\
+Do not rely solely on color.\
+\
+Keep touch targets at least approximately 44\'d744.\
+\
+==================================================\
+42. PERFORMANCE\
+==================================================\
+\
+Target smooth 60 FPS.\
+\
+Avoid:\
+\
+- excessive rerenders\
+- enormous inline SVG trees\
+- unnecessary blur\
+- unbounded particle systems\
+- running JS timers every frame\
+\
+Use native Reanimated animations where possible.\
+\
+Use memoization where meaningful.\
+\
+==================================================\
+43. NO WEBVIEW SHORTCUTS\
+==================================================\
+\
+Important:\
+\
+DO NOT solve this by embedding:\
+\
+Nandans Gambler.dc.html\
+\
+inside a WebView.\
+\
+The HTML is a DESIGN SPECIFICATION.\
+\
+Rebuild it as a real React Native app.\
+\
+==================================================\
+44. VISUAL FIDELITY\
+==================================================\
+\
+Frequently compare implementation against the design file.\
+\
+Maintain:\
+\
+- exact general spacing\
+- card proportions\
+- large rounded geometry\
+- lavender canvas\
+- Baloo display type\
+- Nunito UI type\
+- tactile shadows\
+- pastel palette\
+- floating bottom navigation\
+- compact balance pills\
+- game-specific color identity\
+\
+Do not convert it into:\
+\
+- dark casino UI\
+- crypto UI\
+- generic Bootstrap cards\
+- Material UI look\
+- plain flat design\
+\
+The visual identity from the HTML must survive implementation.\
+\
+==================================================\
+45. SOURCE-OF-TRUTH RULE\
+==================================================\
+\
+When the written requirements conflict with the visual layout:\
+\
+1. Preserve functional requirements.\
+2. Use the attached HTML as the visual source of truth.\
+\
+The existing mockup should be recognizable immediately when the app launches.\
+\
+==================================================\
+46. IMPLEMENTATION ORDER\
+==================================================\
+\
+Build in this order:\
+\
+PHASE 1\
+- project setup\
+- fonts\
+- theme\
+- routing\
+- persistence\
+- reusable clay components\
+\
+PHASE 2\
+- onboarding\
+- Home\
+- All Games\
+- bottom navigation\
+- Profile\
+- Rewards\
+\
+PHASE 3\
+- wallet\
+- stats\
+- achievement system\
+\
+PHASE 4\
+- Blackjack\
+\
+PHASE 5\
+- Roulette\
+- Slots\
+- Mines\
+- Plinko\
+\
+PHASE 6\
+- Dice\
+- Crash\
+- Wheel\
+- Baccarat\
+- Video Poker\
+- Hi-Lo\
+- Keno\
+- Limbo\
+- Towers\
+- Coin Flip\
+\
+PHASE 7\
+- remaining games\
+- sounds\
+- haptics\
+- particles\
+- polish\
+\
+PHASE 8\
+- tests\
+- bug fixes\
+- responsive pass\
+- final visual fidelity pass\
+\
+Do not try to create every game as one giant file.\
+\
+==================================================\
+47. COMPLETION CRITERIA\
+==================================================\
+\
+The project is complete when:\
+\
+- it launches\
+- onboarding works\
+- navigation works\
+- game search works\
+- category filters work\
+- balance persists\
+- games actually function\
+- bets change wallet balance\
+- wins credit wallet\
+- Blackjack works\
+- Roulette works\
+- Slots works\
+- Plinko works\
+- Mines works\
+- Rewards work\
+- Profile stats update\
+- achievements can unlock\
+- app state survives restart\
+- animations work\
+- no major TypeScript errors\
+- no dead navigation links\
+- no placeholder buttons on core screens\
+- visuals closely resemble the attached design\
+\
+==================================================\
+48. WORKING STYLE\
+==================================================\
+\
+Do not stop after scaffolding.\
+\
+Do not create a README and claim completion.\
+\
+Actually implement the product.\
+\
+You are allowed to refactor as needed.\
+\
+If a dependency causes problems:\
+replace it with a simpler robust solution.\
+\
+Whenever possible:\
+\
+1. implement\
+2. run typecheck\
+3. run tests\
+4. fix errors\
+5. launch app\
+6. inspect screens\
+7. polish against design\
+\
+Continue until the app is functional and coherent.\
+\
+==================================================\
+49. IMPORTANT FINAL REQUIREMENT\
+==================================================\
+\
+The final experience should feel like the static Claude Design mockup has COME ALIVE.\
+\
+It should not feel like a developer recreated approximately the same colors.\
+\
+Preserve the tactile clay objects, soft depth, generous rounded forms, playful game illustrations, and subtle animation language.\
+\
+Use the supplied design file constantly as your reference.\
+\
+Start now by examining Nandans Gambler.dc.html and constructing the implementation plan, then immediately begin building the project.}
