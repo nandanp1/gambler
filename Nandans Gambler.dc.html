@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#E9E4F8;font-family:'Nunito',system-ui,-apple-system,sans-serif;color:#171727;-webkit-font-smoothing:antialiased}
+a{color:#7C63EE;text-decoration:none;font-weight:800}
+a:hover{color:#5E42D6}
+</style>
+</helmet>
+
+<section style="padding:64px 72px 110px">
+<div style="max-width:1800px;margin:0 auto">
+
+<div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:14px">
+<div id="1a" style="flex:none;padding:7px 15px;border-radius:14px;background:linear-gradient(180deg,#A08EFF,#8264F2);color:#fff;font:900 15px 'Nunito';box-shadow:0 8px 14px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8">1a</div>
+<div>
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:40px;line-height:1.05;color:#171727">Nandan's Gambler</div>
+<div style="font:600 17px 'Nunito';color:#6C6690;margin-top:6px;max-width:760px">Claymorphic play-money arcade. Ten key screens plus four state variants, iPhone 390×844. All art is CSS/SVG clay — no photography, no characters.</div>
+</div>
+</div>
+
+<sc-if value="{{ showSpec }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 44px">
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#F7F5FF;box-shadow:inset 0 0 0 1.5px #E2DCF7"></span>Canvas #F7F5FF</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#8F7CF7"></span>#8F7CF7</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#65B9FF"></span>#65B9FF</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#FF91BD"></span>#FF91BD</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#71DFC0"></span>#71DFC0</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#FFD966"></span>#FFD966</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px 8px 9px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)"><span style="width:20px;height:20px;border-radius:6px;background:#FF867A"></span>#FF867A</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)">Baloo 2 display · Nunito UI</div>
+<div style="display:flex;align-items:center;gap:9px;padding:8px 15px;border-radius:99px;background:#fff;font:800 13px 'Nunito';color:#4A4470;box-shadow:0 6px 12px -6px rgba(93,74,180,.4)">Radius 26–30 · 3-layer clay shadow</div>
+</div>
+</sc-if>
+
+<div style="display:grid;grid-template-columns:repeat(4,390px);gap:66px 58px;justify-content:start">
+
+<!-- ══════════ ONBOARDING 1 ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Onboarding 1" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="display:flex;justify-content:flex-end;padding:6px 26px 0"><span style="font:800 15px 'Nunito';color:#8C88A6">Skip</span></div>
+
+<div style="position:relative;height:392px;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;width:290px;height:290px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#DCD2FF,#C9BCFB 55%,#BEAEF8)"></div>
+<div style="position:absolute;width:290px;height:290px;border-radius:50%;box-shadow:inset 0 -20px 40px rgba(110,80,220,.22),inset 0 14px 26px rgba(255,255,255,.75)"></div>
+<div style="position:absolute;left:44px;top:96px;width:96px;height:96px;border-radius:50%;background:conic-gradient(#FF91BD 0 25%,#FFD966 0 50%,#71DFC0 0 75%,#65B9FF 0);box-shadow:0 16px 24px -8px rgba(84,50,170,.5),inset 0 -8px 16px rgba(0,0,0,.16)"></div>
+<div style="position:absolute;left:78px;top:130px;width:28px;height:28px;border-radius:50%;background:linear-gradient(180deg,#fff,#EDE7FF);box-shadow:0 3px 6px rgba(80,50,160,.35),inset 0 2px 0 #fff"></div>
+<div style="position:absolute;left:126px;top:58px;width:82px;height:114px;border-radius:16px;background:linear-gradient(170deg,#fff,#F1ECFF);transform:rotate(-15deg);box-shadow:0 18px 26px -10px rgba(84,50,170,.5),inset 0 -5px 10px rgba(140,120,210,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><span style="font:900 20px 'Nunito';line-height:1;color:#171727">A</span><span style="font:900 26px 'Nunito';line-height:1;align-self:flex-end;color:#171727">&#9824;</span></div>
+<div style="position:absolute;left:186px;top:74px;width:82px;height:114px;border-radius:16px;background:linear-gradient(170deg,#fff,#F1ECFF);transform:rotate(11deg);box-shadow:0 18px 26px -10px rgba(84,50,170,.5),inset 0 -5px 10px rgba(140,120,210,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><span style="font:900 20px 'Nunito';line-height:1;color:#F0556B">K</span><span style="font:900 26px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9829;</span></div>
+<div style="position:absolute;left:214px;top:172px;width:86px;height:86px;border-radius:24px;background:linear-gradient(155deg,#fff,#E9E2FF);transform:rotate(14deg);box-shadow:0 20px 28px -10px rgba(84,50,170,.55),inset 0 -8px 14px rgba(140,120,210,.25),inset 0 4px 0 #fff;display:grid;grid-template-columns:repeat(3,1fr);place-items:center;padding:12px"><span style="width:13px;height:13px;border-radius:50%;background:#3A2E6B;box-shadow:inset 0 -2px 2px rgba(0,0,0,.4)"></span><span></span><span style="width:13px;height:13px;border-radius:50%;background:#3A2E6B;box-shadow:inset 0 -2px 2px rgba(0,0,0,.4)"></span><span></span><span style="width:13px;height:13px;border-radius:50%;background:#3A2E6B;box-shadow:inset 0 -2px 2px rgba(0,0,0,.4)"></span><span></span><span style="width:13px;height:13px;border-radius:50%;background:#3A2E6B;box-shadow:inset 0 -2px 2px rgba(0,0,0,.4)"></span><span></span><span style="width:13px;height:13px;border-radius:50%;background:#3A2E6B;box-shadow:inset 0 -2px 2px rgba(0,0,0,.4)"></span></div>
+<div style="position:absolute;left:96px;top:222px;width:52px;height:52px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 12px 18px -6px rgba(150,100,10,.5),inset 0 3px 0 rgba(255,255,255,.85),inset 0 -8px 14px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:24px;color:#B8791A">C</div>
+</div>
+
+<div style="padding:34px 34px 0">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.5px">Pick your game.</div>
+<div style="font:600 17px/1.5 'Nunito';color:#77758A;margin-top:12px;text-wrap:pretty">Twenty-two original games, from blackjack to plinko, all in one tidy arcade.</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:44px;padding:0 30px">
+<div style="display:flex;gap:8px;justify-content:center;margin-bottom:30px"><span style="width:30px;height:9px;border-radius:99px;background:#8264F2;box-shadow:0 3px 6px -2px rgba(120,90,240,.7)"></span><span style="width:9px;height:9px;border-radius:99px;background:#D8D2F0"></span><span style="width:9px;height:9px;border-radius:99px;background:#D8D2F0"></span></div>
+<div style="height:64px;border-radius:26px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 19px 'Nunito';color:#fff;box-shadow:0 16px 26px -10px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45),inset 0 -8px 14px rgba(60,30,150,.28)">Next</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Onboarding 1</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Pick your game</div></div></sc-if>
+</div>
+
+<!-- ══════════ ONBOARDING 2 ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Onboarding 2" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="display:flex;justify-content:flex-end;padding:6px 26px 0"><span style="font:800 15px 'Nunito';color:#8C88A6">Skip</span></div>
+
+<div style="position:relative;height:392px;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;width:290px;height:290px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#C8ECFF,#A9DBFF 55%,#8FCBFB)"></div>
+<div style="position:absolute;width:290px;height:290px;border-radius:50%;box-shadow:inset 0 -20px 40px rgba(40,110,190,.22),inset 0 14px 26px rgba(255,255,255,.8)"></div>
+<div style="position:absolute;left:56px;top:64px;width:80px;height:80px;border-radius:50%;background:linear-gradient(165deg,#FFB3CE,#FF7FB0);box-shadow:0 16px 22px -8px rgba(180,50,110,.5),inset 0 4px 0 rgba(255,255,255,.6),inset 0 -10px 18px rgba(150,20,80,.3);display:grid;place-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#fff;opacity:.5;box-shadow:inset 0 3px 5px rgba(160,40,100,.35)"></span></div>
+<div style="position:absolute;left:88px;top:114px;width:80px;height:80px;border-radius:50%;background:linear-gradient(165deg,#B7F2E0,#63D6B6);box-shadow:0 16px 22px -8px rgba(20,130,105,.5),inset 0 4px 0 rgba(255,255,255,.65),inset 0 -10px 18px rgba(10,110,85,.3);display:grid;place-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#fff;opacity:.5;box-shadow:inset 0 3px 5px rgba(10,110,85,.35)"></span></div>
+<div style="position:absolute;left:120px;top:164px;width:80px;height:80px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 16px 22px -8px rgba(150,100,10,.5),inset 0 4px 0 rgba(255,255,255,.8),inset 0 -10px 18px rgba(150,95,0,.3);display:grid;place-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#fff;opacity:.55;box-shadow:inset 0 3px 5px rgba(150,95,0,.35)"></span></div>
+<div style="position:absolute;right:34px;top:96px;width:120px;height:56px;border-radius:28px;background:linear-gradient(180deg,#FFFFFF,#EFEAFF);box-shadow:0 16px 24px -10px rgba(40,80,160,.45),inset 0 3px 0 #fff,inset 0 -6px 12px rgba(120,105,200,.2);display:flex;align-items:center;padding:0 8px"><span style="flex:1;height:8px;border-radius:99px;background:#E3DCFA"></span><span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(180deg,#A08EFF,#8264F2);box-shadow:0 6px 10px -3px rgba(110,80,230,.7),inset 0 2px 0 rgba(255,255,255,.5);margin-left:-14px"></span></div>
+<div style="position:absolute;right:44px;top:180px;width:100px;height:52px;border-radius:26px;background:linear-gradient(180deg,#7FE3C6,#4FCFAA);box-shadow:0 14px 22px -8px rgba(20,130,105,.55),0 3px 0 #34B892,inset 0 3px 0 rgba(255,255,255,.55);display:flex;align-items:center;justify-content:flex-end;padding:0 6px"><span style="width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 3px 6px rgba(10,90,70,.4)"></span></div>
+<div style="position:absolute;left:150px;top:250px;width:64px;height:64px;border-radius:20px;background:linear-gradient(155deg,#fff,#E9E2FF);transform:rotate(-10deg);box-shadow:0 18px 24px -10px rgba(40,80,160,.5),inset 0 -7px 12px rgba(140,120,210,.25),inset 0 3px 0 #fff;display:grid;place-items:center"><span style="width:12px;height:12px;border-radius:50%;background:#3A2E6B;box-shadow:inset 0 -2px 2px rgba(0,0,0,.4)"></span></div>
+</div>
+
+<div style="padding:34px 34px 0">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.5px">Play your way.</div>
+<div style="font:600 17px/1.5 'Nunito';color:#77758A;margin-top:12px;text-wrap:pretty">Set your stake, choose your risk level, and change your mind whenever you like.</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:44px;padding:0 30px">
+<div style="display:flex;gap:8px;justify-content:center;margin-bottom:30px"><span style="width:9px;height:9px;border-radius:99px;background:#D8D2F0"></span><span style="width:30px;height:9px;border-radius:99px;background:#8264F2;box-shadow:0 3px 6px -2px rgba(120,90,240,.7)"></span><span style="width:9px;height:9px;border-radius:99px;background:#D8D2F0"></span></div>
+<div style="height:64px;border-radius:26px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 19px 'Nunito';color:#fff;box-shadow:0 16px 26px -10px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45),inset 0 -8px 14px rgba(60,30,150,.28)">Next</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Onboarding 2</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Play your way</div></div></sc-if>
+</div>
+
+<!-- ══════════ ONBOARDING 3 ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Onboarding 3" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="height:33px"></div>
+
+<div style="position:relative;height:392px;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;width:290px;height:290px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#FFE0EC,#FFC2D8 55%,#FFAECB)"></div>
+<div style="position:absolute;width:290px;height:290px;border-radius:50%;box-shadow:inset 0 -20px 40px rgba(190,60,120,.2),inset 0 14px 26px rgba(255,255,255,.8)"></div>
+<div style="position:absolute;left:112px;top:96px;width:132px;height:112px;border-radius:24px;background:linear-gradient(170deg,#A08EFF,#7C5DF0);box-shadow:0 22px 30px -12px rgba(90,55,200,.6),inset 0 4px 0 rgba(255,255,255,.4),inset 0 -12px 22px rgba(50,20,140,.35)"></div>
+<div style="position:absolute;left:104px;top:82px;width:148px;height:34px;border-radius:14px;background:linear-gradient(180deg,#B8A9FF,#8C71F5);box-shadow:0 8px 14px -5px rgba(90,55,200,.55),inset 0 3px 0 rgba(255,255,255,.5)"></div>
+<div style="position:absolute;left:168px;top:82px;width:20px;height:126px;background:linear-gradient(180deg,#FFE9AE,#FFC53D);box-shadow:inset -3px 0 6px rgba(160,100,0,.3),inset 3px 0 0 rgba(255,255,255,.5)"></div>
+<div style="position:absolute;left:140px;top:56px;width:38px;height:38px;border-radius:50% 50% 6px 50%;background:linear-gradient(160deg,#FFE9AE,#FFC53D);transform:rotate(-14deg);box-shadow:0 6px 10px -3px rgba(160,100,0,.5),inset 0 3px 0 rgba(255,255,255,.7)"></div>
+<div style="position:absolute;left:180px;top:56px;width:38px;height:38px;border-radius:50% 50% 50% 6px;background:linear-gradient(160deg,#FFE9AE,#FFC53D);transform:rotate(14deg);box-shadow:0 6px 10px -3px rgba(160,100,0,.5),inset 0 3px 0 rgba(255,255,255,.7)"></div>
+<div style="position:absolute;left:36px;top:150px;width:78px;height:78px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 16px 22px -8px rgba(150,100,10,.5),inset 0 4px 0 rgba(255,255,255,.85),inset 0 -12px 20px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:34px;color:#B8791A">C</div>
+<div style="position:absolute;left:70px;top:216px;width:54px;height:54px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 10px 16px -6px rgba(150,100,10,.5),inset 0 3px 0 rgba(255,255,255,.85),inset 0 -8px 14px rgba(160,100,0,.35)"></div>
+<div style="position:absolute;right:34px;top:140px;width:66px;height:52px;border-radius:8px 8px 30px 30px;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 14px 20px -8px rgba(150,100,10,.55),inset 0 4px 0 rgba(255,255,255,.8),inset 0 -10px 16px rgba(160,100,0,.35)"></div>
+<div style="position:absolute;right:52px;top:190px;width:30px;height:24px;background:linear-gradient(180deg,#FFD873,#E9A81F);box-shadow:inset 0 -3px 5px rgba(140,85,0,.35)"></div>
+<div style="position:absolute;right:38px;top:212px;width:58px;height:16px;border-radius:8px;background:linear-gradient(180deg,#FFD873,#D99A16);box-shadow:0 8px 12px -5px rgba(150,100,10,.5),inset 0 2px 0 rgba(255,255,255,.6)"></div>
+<div style="position:absolute;right:22px;top:126px;width:22px;height:34px;border-radius:11px 0 0 11px;border:7px solid #FFC53D;border-right:0;box-sizing:border-box"></div>
+<div style="position:absolute;right:78px;top:126px;width:22px;height:34px;border-radius:0 11px 11px 0;border:7px solid #FFC53D;border-left:0;box-sizing:border-box"></div>
+</div>
+
+<div style="padding:34px 34px 0">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.5px">Collect rewards.</div>
+<div style="font:600 17px/1.5 'Nunito';color:#77758A;margin-top:12px;text-wrap:pretty">Daily bonuses, streaks and achievements keep your coin balance topped up.</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:44px;padding:0 30px">
+<div style="display:flex;gap:8px;justify-content:center;margin-bottom:30px"><span style="width:9px;height:9px;border-radius:99px;background:#D8D2F0"></span><span style="width:9px;height:9px;border-radius:99px;background:#D8D2F0"></span><span style="width:30px;height:9px;border-radius:99px;background:#8264F2;box-shadow:0 3px 6px -2px rgba(120,90,240,.7)"></span></div>
+<div style="height:64px;border-radius:26px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 19px 'Nunito';color:#fff;box-shadow:0 16px 26px -10px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45),inset 0 -8px 14px rgba(60,30,150,.28)">Get Started</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Onboarding 3</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Collect rewards</div></div></sc-if>
+</div>
+
+<!-- ══════════ HOME ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Home" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:11px">
+<div style="width:46px;height:46px;border-radius:16px;background:linear-gradient(160deg,#FFB3CE,#FF7FB0);box-shadow:0 8px 14px -5px rgba(180,50,110,.5),inset 0 3px 0 rgba(255,255,255,.55),inset 0 -6px 12px rgba(150,20,80,.28);display:grid;place-items:center;font:900 18px 'Nunito';color:#fff">N</div>
+<div><div style="font:700 13px 'Nunito';color:#8C88A6">Good evening</div><div style="font:900 15px 'Nunito';color:#171727">Nandan</div></div>
+</div>
+<div style="display:flex;align-items:center;gap:9px">
+<div style="display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 7px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff,inset 0 -4px 9px rgba(120,105,200,.14)"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35),0 2px 4px rgba(150,100,10,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:15px;color:#B8791A">C</span><span style="font:900 16px 'Nunito';color:#171727">10,642</span></div>
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff,inset 0 -4px 9px rgba(120,105,200,.14);display:grid;place-items:center;position:relative"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6"></path><path d="M10.5 20a2 2 0 0 0 3 0"></path></svg><span style="position:absolute;top:9px;right:10px;width:9px;height:9px;border-radius:50%;background:#FF6B8A;box-shadow:0 0 0 2.5px #fff"></span></div>
+</div>
+</div>
+
+<div style="padding:20px 20px 0">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:32px;line-height:1.1;letter-spacing:-.4px">What do you want to play?</div>
+</div>
+
+<div style="padding:18px 20px 0">
+<div style="height:56px;border-radius:22px;background:#EFEBFC;display:flex;align-items:center;gap:11px;padding:0 18px;box-shadow:inset 0 4px 8px rgba(120,105,200,.22),inset 0 -2px 0 rgba(255,255,255,.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A95B8" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg><span style="font:600 16px 'Nunito';color:#9A95B8">Search games</span></div>
+</div>
+
+<div style="display:flex;gap:8px;padding:18px 20px 0;overflow:hidden">
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:linear-gradient(180deg,#A08EFF,#8264F2);color:#fff;font:800 14px 'Nunito';box-shadow:0 8px 14px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.4)">Featured</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Originals</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Table</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Slots</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Quick</span>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;padding:22px 20px 0">
+
+<div>
+<div style="position:relative;height:150px;border-radius:26px;background:linear-gradient(160deg,#FF9E8E,#F4695A);overflow:hidden;box-shadow:0 14px 22px -9px rgba(190,70,55,.55),0 3px 6px -2px rgba(190,70,55,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(120,20,10,.2)">
+<span style="position:absolute;left:-26px;top:-34px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.14)"></span>
+<span style="position:absolute;left:22px;top:30px;width:54px;height:76px;border-radius:11px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(-16deg);box-shadow:0 10px 14px -5px rgba(110,25,15,.5),inset 0 -4px 7px rgba(150,130,200,.2);display:flex;flex-direction:column;justify-content:space-between;padding:7px 8px"><b style="font:900 15px 'Nunito';line-height:1;color:#171727">A</b><b style="font:900 17px 'Nunito';line-height:1;align-self:flex-end;color:#171727">&#9824;</b></span>
+<span style="position:absolute;left:62px;top:24px;width:54px;height:76px;border-radius:11px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(9deg);box-shadow:0 10px 14px -5px rgba(110,25,15,.5),inset 0 -4px 7px rgba(150,130,200,.2);display:flex;flex-direction:column;justify-content:space-between;padding:7px 8px"><b style="font:900 15px 'Nunito';line-height:1;color:#F0556B">J</b><b style="font:900 17px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9829;</b></span>
+<span style="position:absolute;right:18px;bottom:16px;width:34px;height:34px;border-radius:50%;background:linear-gradient(170deg,#fff,#E4DDF6);box-shadow:0 6px 10px -3px rgba(110,25,15,.5),inset 0 -4px 7px rgba(120,100,180,.3)"></span>
+<span style="position:absolute;right:34px;bottom:26px;width:34px;height:34px;border-radius:50%;background:linear-gradient(170deg,#8FA3FF,#5A6FE0);box-shadow:0 6px 10px -3px rgba(110,25,15,.5),inset 0 -4px 7px rgba(30,40,120,.4)"></span>
+</div>
+<div style="padding:11px 3px 0"><div style="font:900 16px 'Nunito';color:#171727;line-height:1.1">Blackjack</div><div style="font:700 11px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Table</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:150px;border-radius:26px;background:linear-gradient(160deg,#8FCEFF,#4EA3F5);overflow:hidden;box-shadow:0 14px 22px -9px rgba(30,100,180,.55),0 3px 6px -2px rgba(30,100,180,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(10,50,110,.2)">
+<span style="position:absolute;right:-24px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.16)"></span>
+<span style="position:absolute;left:26px;top:32px;width:62px;height:62px;border-radius:18px;background:linear-gradient(155deg,#fff,#E7E1F8);transform:rotate(-13deg);box-shadow:0 12px 16px -5px rgba(10,55,120,.5),inset 0 -6px 10px rgba(120,100,180,.25),inset 0 3px 0 #fff;display:grid;grid-template-columns:repeat(3,1fr);place-items:center;padding:9px"><i style="width:9px;height:9px;border-radius:50%;background:#3A2E6B"></i><i></i><i style="width:9px;height:9px;border-radius:50%;background:#3A2E6B"></i><i></i><i style="width:9px;height:9px;border-radius:50%;background:#3A2E6B"></i><i></i><i style="width:9px;height:9px;border-radius:50%;background:#3A2E6B"></i><i></i><i style="width:9px;height:9px;border-radius:50%;background:#3A2E6B"></i></span>
+<span style="position:absolute;right:22px;bottom:22px;width:56px;height:56px;border-radius:16px;background:linear-gradient(155deg,#fff,#E7E1F8);transform:rotate(15deg);box-shadow:0 12px 16px -5px rgba(10,55,120,.5),inset 0 -6px 10px rgba(120,100,180,.25),inset 0 3px 0 #fff;display:grid;place-items:center"><i style="width:11px;height:11px;border-radius:50%;background:#3A2E6B"></i></span>
+</div>
+<div style="padding:11px 3px 0"><div style="font:900 16px 'Nunito';color:#171727;line-height:1.1">Dice</div><div style="font:700 11px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Original</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:150px;border-radius:26px;background:linear-gradient(160deg,#8DE9CD,#42C9A4);overflow:hidden;box-shadow:0 14px 22px -9px rgba(15,130,105,.55),0 3px 6px -2px rgba(15,130,105,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(5,90,70,.2)">
+<span style="position:absolute;left:16px;bottom:14px;display:grid;grid-template-columns:repeat(3,26px);gap:6px"><i style="height:26px;border-radius:8px;background:rgba(255,255,255,.34);box-shadow:inset 0 2px 0 rgba(255,255,255,.5)"></i><i style="height:26px;border-radius:8px;background:rgba(255,255,255,.34);box-shadow:inset 0 2px 0 rgba(255,255,255,.5)"></i><i style="height:26px;border-radius:8px;background:rgba(255,255,255,.34);box-shadow:inset 0 2px 0 rgba(255,255,255,.5)"></i><i style="height:26px;border-radius:8px;background:rgba(255,255,255,.2);box-shadow:inset 0 2px 0 rgba(255,255,255,.4)"></i><i style="height:26px;border-radius:8px;background:rgba(255,255,255,.2);box-shadow:inset 0 2px 0 rgba(255,255,255,.4)"></i><i style="height:26px;border-radius:8px;background:rgba(255,255,255,.2);box-shadow:inset 0 2px 0 rgba(255,255,255,.4)"></i></span>
+<span style="position:absolute;left:44px;top:22px;width:66px;height:60px;background:linear-gradient(160deg,#7FF0D8,#17A583);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);filter:drop-shadow(0 10px 10px rgba(5,80,60,.5))"></span>
+<span style="position:absolute;left:56px;top:28px;width:42px;height:20px;background:rgba(255,255,255,.5);clip-path:polygon(50% 0,100% 55%,0 55%)"></span>
+<span style="position:absolute;right:16px;bottom:52px;width:30px;height:30px;border-radius:50%;background:linear-gradient(160deg,#4A4470,#232042);box-shadow:0 6px 10px -3px rgba(5,60,45,.6),inset 0 3px 0 rgba(255,255,255,.28)"></span>
+<span style="position:absolute;right:22px;bottom:78px;width:5px;height:12px;border-radius:3px;background:#FFD966;transform:rotate(24deg)"></span>
+</div>
+<div style="padding:11px 3px 0"><div style="font:900 16px 'Nunito';color:#171727;line-height:1.1">Mines</div><div style="font:700 11px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Original</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:150px;border-radius:26px;background:linear-gradient(160deg,#B7A4FF,#8264F2);overflow:hidden;box-shadow:0 14px 22px -9px rgba(90,55,200,.55),0 3px 6px -2px rgba(90,55,200,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(45,15,130,.22)">
+<span style="position:absolute;left:0;right:0;top:44px;display:grid;grid-template-columns:repeat(5,1fr);justify-items:center;gap:0"><i style="width:11px;height:11px;border-radius:50%;background:#FF91BD;box-shadow:inset 0 -2px 3px rgba(140,20,70,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#FFD966;box-shadow:inset 0 -2px 3px rgba(140,90,0,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#71DFC0;box-shadow:inset 0 -2px 3px rgba(0,90,70,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#FFD966;box-shadow:inset 0 -2px 3px rgba(140,90,0,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#FF91BD;box-shadow:inset 0 -2px 3px rgba(140,20,70,.4)"></i></span>
+<span style="position:absolute;left:16px;right:16px;top:74px;display:grid;grid-template-columns:repeat(4,1fr);justify-items:center"><i style="width:11px;height:11px;border-radius:50%;background:#FFD966;box-shadow:inset 0 -2px 3px rgba(140,90,0,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#71DFC0;box-shadow:inset 0 -2px 3px rgba(0,90,70,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#71DFC0;box-shadow:inset 0 -2px 3px rgba(0,90,70,.4)"></i><i style="width:11px;height:11px;border-radius:50%;background:#FFD966;box-shadow:inset 0 -2px 3px rgba(140,90,0,.4)"></i></span>
+<span style="position:absolute;left:0;right:0;bottom:14px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:0 14px"><i style="height:22px;border-radius:8px;background:rgba(255,255,255,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.45)"></i><i style="height:22px;border-radius:8px;background:rgba(255,255,255,.42);box-shadow:inset 0 2px 0 rgba(255,255,255,.55)"></i><i style="height:22px;border-radius:8px;background:#FFD966;box-shadow:inset 0 -3px 5px rgba(140,90,0,.3),inset 0 2px 0 rgba(255,255,255,.6)"></i><i style="height:22px;border-radius:8px;background:rgba(255,255,255,.42);box-shadow:inset 0 2px 0 rgba(255,255,255,.55)"></i><i style="height:22px;border-radius:8px;background:rgba(255,255,255,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.45)"></i></span>
+<span style="position:absolute;left:50%;top:16px;margin-left:-12px;width:24px;height:24px;border-radius:50%;background:linear-gradient(160deg,#fff,#E4DDF6);box-shadow:0 8px 12px -3px rgba(45,15,130,.55),inset 0 -4px 7px rgba(120,100,180,.3),inset 0 3px 0 #fff"></span>
+</div>
+<div style="padding:11px 3px 0"><div style="font:900 16px 'Nunito';color:#171727;line-height:1.1">Plinko</div><div style="font:700 11px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Original</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:150px;border-radius:26px;background:linear-gradient(160deg,#FFC5DC,#FF7FB0);overflow:hidden;box-shadow:0 14px 22px -9px rgba(190,50,110,.5),0 3px 6px -2px rgba(190,50,110,.28),inset 0 3px 0 rgba(255,255,255,.45),inset 0 -12px 20px rgba(140,15,70,.2)">
+<span style="position:absolute;left:-24px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.16)"></span>
+<span style="position:absolute;left:24px;top:26px;width:104px;height:88px;border-radius:20px;background:linear-gradient(170deg,#fff,#EFE8FB);box-shadow:0 14px 18px -6px rgba(140,20,70,.5),inset 0 -7px 12px rgba(140,120,190,.25),inset 0 3px 0 #fff;display:flex;align-items:center;justify-content:center;gap:5px;padding:0 9px"><i style="flex:1;height:50px;border-radius:9px;background:#EDE7FA;box-shadow:inset 0 3px 6px rgba(120,100,180,.35);display:grid;place-items:center;font:900 19px 'Nunito';color:#8264F2;font-style:normal">7</i><i style="flex:1;height:50px;border-radius:9px;background:#EDE7FA;box-shadow:inset 0 3px 6px rgba(120,100,180,.35);display:grid;place-items:center;font:900 19px 'Nunito';color:#FF7FB0;font-style:normal">&#9733;</i><i style="flex:1;height:50px;border-radius:9px;background:#EDE7FA;box-shadow:inset 0 3px 6px rgba(120,100,180,.35);display:grid;place-items:center;font:900 19px 'Nunito';color:#4EA3F5;font-style:normal">&#9670;</i></span>
+<span style="position:absolute;left:130px;top:44px;width:12px;height:34px;border-radius:6px;background:linear-gradient(180deg,#FFE9AE,#E9A81F);box-shadow:2px 3px 6px rgba(140,20,70,.4)"></span>
+<span style="position:absolute;left:126px;top:34px;width:20px;height:20px;border-radius:50%;background:linear-gradient(160deg,#FF9E8E,#E8483A);box-shadow:0 4px 7px rgba(140,20,70,.5),inset 0 2px 0 rgba(255,255,255,.5)"></span>
+<span style="position:absolute;left:26px;bottom:14px;width:26px;height:26px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 5px 8px -2px rgba(140,20,70,.5),inset 0 2px 0 rgba(255,255,255,.8),inset 0 -4px 7px rgba(160,100,0,.35)"></span>
+<span style="position:absolute;left:48px;bottom:10px;width:20px;height:20px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 4px 7px -2px rgba(140,20,70,.5),inset 0 2px 0 rgba(255,255,255,.8)"></span>
+</div>
+<div style="padding:11px 3px 0"><div style="font:900 16px 'Nunito';color:#171727;line-height:1.1">Slots</div><div style="font:700 11px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Slots</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:150px;border-radius:26px;background:linear-gradient(160deg,#8DE0FF,#4EA3F5);overflow:hidden;box-shadow:0 14px 22px -9px rgba(30,100,180,.5),0 3px 6px -2px rgba(30,100,180,.28),inset 0 3px 0 rgba(255,255,255,.45),inset 0 -12px 20px rgba(10,50,110,.2)">
+<span style="position:absolute;right:-22px;bottom:-26px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.15)"></span>
+<span style="position:absolute;left:50%;top:26px;margin-left:-56px;width:112px;height:112px;border-radius:50%;background:linear-gradient(170deg,#fff,#DED6F2);box-shadow:0 16px 22px -8px rgba(10,55,120,.55),inset 0 -8px 14px rgba(120,100,180,.3),inset 0 4px 0 #fff;display:grid;place-items:center"><i style="width:88px;height:88px;border-radius:50%;background:repeating-conic-gradient(#2E2A55 0 15deg,#F0556B 0 30deg);box-shadow:inset 0 -6px 12px rgba(0,0,0,.35);display:grid;place-items:center"><b style="width:36px;height:36px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 3px 6px rgba(0,0,0,.4),inset 0 2px 0 rgba(255,255,255,.8),inset 0 -5px 9px rgba(160,100,0,.35)"></b></i></span>
+<span style="position:absolute;left:50%;top:38px;margin-left:22px;width:15px;height:15px;border-radius:50%;background:linear-gradient(170deg,#fff,#E4DDF6);box-shadow:0 3px 5px rgba(0,0,0,.45),inset 0 2px 0 #fff"></span>
+</div>
+<div style="padding:11px 3px 0"><div style="font:900 16px 'Nunito';color:#171727;line-height:1.1">Roulette</div><div style="font:700 11px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Table</div></div>
+</div>
+
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(247,245,255,0),#F7F5FF 46%)"></div>
+<div style="position:absolute;left:16px;right:16px;bottom:26px;height:72px;background:linear-gradient(180deg,#FFFFFF,#F5F2FF);border-radius:30px;display:flex;align-items:center;gap:6px;padding:0 10px;box-shadow:0 20px 32px -14px rgba(84,64,170,.45),0 5px 10px -4px rgba(84,64,170,.22),inset 0 2px 0 #fff,inset 0 -5px 12px rgba(120,105,200,.13)">
+<div style="flex:1;height:56px;border-radius:22px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 10px 16px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.4)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6.5 8 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"></path></svg><span style="font:800 10.5px 'Nunito';color:#fff">Home</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2.2"></rect></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Games</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11.5" rx="2.4"></rect><path d="M2.5 7.5h19v3.5h-19zM12 7.5v13"></path><path d="M12 7.5S10.5 3 8 3.6C6 4 6.4 7.5 12 7.5zM12 7.5S13.5 3 16 3.6C18 4 17.6 7.5 12 7.5z"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Rewards</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Profile</span></div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Home</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Featured tab</div></div></sc-if>
+</div>
+
+<!-- ══════════ ALL GAMES ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="All Games" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:30px;letter-spacing:-.3px">All Games</div>
+<div style="display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 7px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff,inset 0 -4px 9px rgba(120,105,200,.14)"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:15px;color:#B8791A">C</span><span style="font:900 16px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="padding:16px 20px 0">
+<div style="height:56px;border-radius:22px;background:#EFEBFC;display:flex;align-items:center;gap:11px;padding:0 18px;box-shadow:inset 0 4px 8px rgba(120,105,200,.22),inset 0 -2px 0 rgba(255,255,255,.9)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A95B8" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg><span style="font:600 16px 'Nunito';color:#9A95B8">Search 22 games</span></div>
+</div>
+
+<div style="display:flex;gap:8px;padding:16px 20px 0;overflow:hidden">
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:linear-gradient(180deg,#A08EFF,#8264F2);color:#fff;font:800 14px 'Nunito';box-shadow:0 8px 14px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.4)">Featured</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Originals</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Table</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Slots</span>
+<span style="flex:none;padding:10px 13px;border-radius:99px;background:#fff;color:#6C6890;font:800 14px 'Nunito';box-shadow:0 5px 10px -6px rgba(93,74,180,.4),inset 0 -2px 5px rgba(120,105,200,.1)">Arcade</span>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;padding:20px 20px 0">
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#FF9E8E,#F4695A);overflow:hidden;box-shadow:0 13px 20px -9px rgba(190,70,55,.55),0 3px 6px -2px rgba(190,70,55,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(120,20,10,.2)">
+<span style="position:absolute;left:-22px;top:-30px;width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.14)"></span>
+<span style="position:absolute;left:26px;top:26px;width:48px;height:68px;border-radius:10px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(-15deg);box-shadow:0 9px 12px -4px rgba(110,25,15,.5),inset 0 -4px 7px rgba(150,130,200,.2);display:flex;flex-direction:column;justify-content:space-between;padding:6px 7px"><b style="font:900 13px 'Nunito';line-height:1">A</b><b style="font:900 15px 'Nunito';line-height:1;align-self:flex-end">&#9824;</b></span>
+<span style="position:absolute;left:62px;top:20px;width:48px;height:68px;border-radius:10px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(10deg);box-shadow:0 9px 12px -4px rgba(110,25,15,.5),inset 0 -4px 7px rgba(150,130,200,.2);display:flex;flex-direction:column;justify-content:space-between;padding:6px 7px"><b style="font:900 13px 'Nunito';line-height:1;color:#F0556B">J</b><b style="font:900 15px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9829;</b></span>
+<span style="position:absolute;right:16px;bottom:14px;width:28px;height:28px;border-radius:50%;background:linear-gradient(170deg,#8FA3FF,#5A6FE0);box-shadow:0 5px 9px -3px rgba(110,25,15,.5),inset 0 -4px 7px rgba(30,40,120,.4)"></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Blackjack</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Table</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#8DE0FF,#4EA3F5);overflow:hidden;box-shadow:0 13px 20px -9px rgba(30,100,180,.5),0 3px 6px -2px rgba(30,100,180,.28),inset 0 3px 0 rgba(255,255,255,.45),inset 0 -12px 20px rgba(10,50,110,.2)">
+<span style="position:absolute;left:50%;top:20px;margin-left:-46px;width:92px;height:92px;border-radius:50%;background:linear-gradient(170deg,#fff,#DED6F2);box-shadow:0 13px 18px -7px rgba(10,55,120,.55),inset 0 -7px 12px rgba(120,100,180,.3),inset 0 3px 0 #fff;display:grid;place-items:center"><i style="width:70px;height:70px;border-radius:50%;background:repeating-conic-gradient(#2E2A55 0 15deg,#F0556B 0 30deg);box-shadow:inset 0 -5px 10px rgba(0,0,0,.35);display:grid;place-items:center"><b style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:0 3px 5px rgba(0,0,0,.4),inset 0 2px 0 rgba(255,255,255,.8)"></b></i></span>
+<span style="position:absolute;left:50%;top:30px;margin-left:18px;width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#E4DDF6);box-shadow:0 3px 5px rgba(0,0,0,.45)"></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Roulette</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Table</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#B7A4FF,#8264F2);overflow:hidden;box-shadow:0 13px 20px -9px rgba(90,55,200,.55),0 3px 6px -2px rgba(90,55,200,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(45,15,130,.22)">
+<span style="position:absolute;right:-20px;bottom:-24px;width:104px;height:104px;border-radius:50%;background:rgba(255,255,255,.14)"></span>
+<span style="position:absolute;left:22px;top:24px;width:50px;height:72px;border-radius:11px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(-12deg);box-shadow:0 9px 13px -4px rgba(45,15,130,.5),inset 0 -4px 7px rgba(150,130,200,.22);display:grid;place-items:center"><b style="font:900 22px 'Nunito';color:#171727">8</b></span>
+<span style="position:absolute;right:24px;top:32px;width:50px;height:72px;border-radius:11px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(12deg);box-shadow:0 9px 13px -4px rgba(45,15,130,.5),inset 0 -4px 7px rgba(150,130,200,.22);display:grid;place-items:center"><b style="font:900 22px 'Nunito';color:#F0556B">9</b></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Baccarat</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Table</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#8DE9CD,#42C9A4);overflow:hidden;box-shadow:0 13px 20px -9px rgba(15,130,105,.55),0 3px 6px -2px rgba(15,130,105,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(5,90,70,.2)">
+<span style="position:absolute;left:14px;top:30px;width:44px;height:64px;border-radius:10px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(-18deg);box-shadow:0 8px 12px -4px rgba(5,80,60,.5);display:flex;padding:6px"><b style="font:900 12px 'Nunito'">Q</b></span>
+<span style="position:absolute;left:52px;top:22px;width:44px;height:64px;border-radius:10px;background:linear-gradient(170deg,#fff,#F2EDFF);box-shadow:0 8px 12px -4px rgba(5,80,60,.5);display:flex;padding:6px"><b style="font:900 12px 'Nunito';color:#F0556B">K</b></span>
+<span style="position:absolute;left:88px;top:30px;width:44px;height:64px;border-radius:10px;background:linear-gradient(170deg,#fff,#F2EDFF);transform:rotate(18deg);box-shadow:0 8px 12px -4px rgba(5,80,60,.5);display:flex;padding:6px"><b style="font:900 12px 'Nunito'">A</b></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Video Poker</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Table</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#FFC5DC,#FF7FB0);overflow:hidden;box-shadow:0 13px 20px -9px rgba(190,50,110,.5),0 3px 6px -2px rgba(190,50,110,.28),inset 0 3px 0 rgba(255,255,255,.45),inset 0 -12px 20px rgba(140,15,70,.2)">
+<span style="position:absolute;left:20px;top:24px;width:96px;height:80px;border-radius:18px;background:linear-gradient(170deg,#fff,#EFE8FB);box-shadow:0 12px 16px -6px rgba(140,20,70,.5),inset 0 -6px 11px rgba(140,120,190,.25),inset 0 3px 0 #fff;display:flex;align-items:center;gap:5px;padding:0 8px"><i style="flex:1;height:46px;border-radius:8px;background:#EDE7FA;box-shadow:inset 0 3px 6px rgba(120,100,180,.35);display:grid;place-items:center;font:900 17px 'Nunito';color:#8264F2;font-style:normal">7</i><i style="flex:1;height:46px;border-radius:8px;background:#EDE7FA;box-shadow:inset 0 3px 6px rgba(120,100,180,.35);display:grid;place-items:center;font:900 17px 'Nunito';color:#FF7FB0;font-style:normal">&#9733;</i><i style="flex:1;height:46px;border-radius:8px;background:#EDE7FA;box-shadow:inset 0 3px 6px rgba(120,100,180,.35);display:grid;place-items:center;font:900 17px 'Nunito';color:#4EA3F5;font-style:normal">&#9670;</i></span>
+<span style="position:absolute;left:118px;top:40px;width:11px;height:30px;border-radius:6px;background:linear-gradient(180deg,#FFE9AE,#E9A81F);box-shadow:2px 3px 6px rgba(140,20,70,.4)"></span>
+<span style="position:absolute;left:114px;top:31px;width:19px;height:19px;border-radius:50%;background:linear-gradient(160deg,#FF9E8E,#E8483A);box-shadow:0 4px 7px rgba(140,20,70,.5),inset 0 2px 0 rgba(255,255,255,.5)"></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Slots</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Slots</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#B7A4FF,#8264F2);overflow:hidden;box-shadow:0 13px 20px -9px rgba(90,55,200,.55),0 3px 6px -2px rgba(90,55,200,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(45,15,130,.22)">
+<span style="position:absolute;left:0;right:0;top:38px;display:grid;grid-template-columns:repeat(5,1fr);justify-items:center"><i style="width:10px;height:10px;border-radius:50%;background:#FF91BD"></i><i style="width:10px;height:10px;border-radius:50%;background:#FFD966"></i><i style="width:10px;height:10px;border-radius:50%;background:#71DFC0"></i><i style="width:10px;height:10px;border-radius:50%;background:#FFD966"></i><i style="width:10px;height:10px;border-radius:50%;background:#FF91BD"></i></span>
+<span style="position:absolute;left:16px;right:16px;top:62px;display:grid;grid-template-columns:repeat(4,1fr);justify-items:center"><i style="width:10px;height:10px;border-radius:50%;background:#FFD966"></i><i style="width:10px;height:10px;border-radius:50%;background:#71DFC0"></i><i style="width:10px;height:10px;border-radius:50%;background:#71DFC0"></i><i style="width:10px;height:10px;border-radius:50%;background:#FFD966"></i></span>
+<span style="position:absolute;left:0;right:0;bottom:12px;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:0 12px"><i style="height:18px;border-radius:7px;background:rgba(255,255,255,.28)"></i><i style="height:18px;border-radius:7px;background:rgba(255,255,255,.42)"></i><i style="height:18px;border-radius:7px;background:#FFD966"></i><i style="height:18px;border-radius:7px;background:rgba(255,255,255,.42)"></i><i style="height:18px;border-radius:7px;background:rgba(255,255,255,.28)"></i></span>
+<span style="position:absolute;left:50%;top:12px;margin-left:-11px;width:22px;height:22px;border-radius:50%;background:linear-gradient(160deg,#fff,#E4DDF6);box-shadow:0 7px 11px -3px rgba(45,15,130,.55),inset 0 3px 0 #fff"></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Plinko</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Original</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#8DE9CD,#42C9A4);overflow:hidden;box-shadow:0 13px 20px -9px rgba(15,130,105,.55),0 3px 6px -2px rgba(15,130,105,.3),inset 0 3px 0 rgba(255,255,255,.4),inset 0 -12px 20px rgba(5,90,70,.2)">
+<span style="position:absolute;left:14px;bottom:12px;display:grid;grid-template-columns:repeat(3,24px);gap:5px"><i style="height:24px;border-radius:8px;background:rgba(255,255,255,.34)"></i><i style="height:24px;border-radius:8px;background:rgba(255,255,255,.34)"></i><i style="height:24px;border-radius:8px;background:rgba(255,255,255,.34)"></i><i style="height:24px;border-radius:8px;background:rgba(255,255,255,.2)"></i><i style="height:24px;border-radius:8px;background:rgba(255,255,255,.2)"></i><i style="height:24px;border-radius:8px;background:rgba(255,255,255,.2)"></i></span>
+<span style="position:absolute;left:38px;top:18px;width:58px;height:52px;background:linear-gradient(160deg,#7FF0D8,#17A583);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);filter:drop-shadow(0 9px 9px rgba(5,80,60,.5))"></span>
+<span style="position:absolute;left:48px;top:23px;width:38px;height:17px;background:rgba(255,255,255,.5);clip-path:polygon(50% 0,100% 55%,0 55%)"></span>
+<span style="position:absolute;right:14px;bottom:44px;width:26px;height:26px;border-radius:50%;background:linear-gradient(160deg,#4A4470,#232042);box-shadow:0 5px 9px -3px rgba(5,60,45,.6),inset 0 3px 0 rgba(255,255,255,.28)"></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Mines</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Original</div></div>
+</div>
+
+<div>
+<div style="position:relative;height:128px;border-radius:24px;background:linear-gradient(160deg,#FFE08F,#FFB13D);overflow:hidden;box-shadow:0 13px 20px -9px rgba(180,110,10,.5),0 3px 6px -2px rgba(180,110,10,.3),inset 0 3px 0 rgba(255,255,255,.5),inset 0 -12px 20px rgba(140,80,0,.2)">
+<svg width="166" height="128" viewBox="0 0 166 128" style="position:absolute;left:0;top:0"><path d="M14 112C40 108 66 88 84 56" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none" opacity=".55" stroke-dasharray="1 14"></path></svg>
+<span style="position:absolute;right:36px;top:20px;width:38px;height:62px;border-radius:19px 19px 8px 8px;background:linear-gradient(160deg,#fff,#E7E1F8);transform:rotate(34deg);box-shadow:0 12px 16px -6px rgba(140,80,0,.5),inset 0 -6px 10px rgba(120,100,180,.25),inset 0 3px 0 #fff"></span>
+<span style="position:absolute;right:48px;top:36px;width:16px;height:16px;border-radius:50%;background:#65B9FF;transform:rotate(34deg);box-shadow:inset 0 -3px 4px rgba(10,60,120,.5)"></span>
+<span style="position:absolute;right:24px;top:66px;width:20px;height:22px;border-radius:0 0 10px 10px;background:linear-gradient(180deg,#FF9E8E,#E8483A);transform:rotate(34deg);box-shadow:0 5px 9px -3px rgba(140,80,0,.5)"></span>
+</div>
+<div style="padding:10px 3px 0"><div style="font:900 15px 'Nunito';line-height:1.1">Crash</div><div style="font:700 10.5px 'Nunito';color:#9A95B8;letter-spacing:.07em;text-transform:uppercase;margin-top:3px">Original</div></div>
+</div>
+
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(247,245,255,0),#F7F5FF 46%)"></div>
+<div style="position:absolute;left:16px;right:16px;bottom:26px;height:72px;background:linear-gradient(180deg,#FFFFFF,#F5F2FF);border-radius:30px;display:flex;align-items:center;gap:6px;padding:0 10px;box-shadow:0 20px 32px -14px rgba(84,64,170,.45),0 5px 10px -4px rgba(84,64,170,.22),inset 0 2px 0 #fff,inset 0 -5px 12px rgba(120,105,200,.13)">
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6.5 8 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Home</span></div>
+<div style="flex:1;height:56px;border-radius:22px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 10px 16px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.4)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2.2"></rect></svg><span style="font:800 10.5px 'Nunito';color:#fff">Games</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11.5" rx="2.4"></rect><path d="M2.5 7.5h19v3.5h-19zM12 7.5v13"></path><path d="M12 7.5S10.5 3 8 3.6C6 4 6.4 7.5 12 7.5zM12 7.5S13.5 3 16 3.6C18 4 17.6 7.5 12 7.5z"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Rewards</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Profile</span></div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">All Games</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">22-game library</div></div></sc-if>
+</div>
+
+<!-- ══════════ BLACKJACK ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Blackjack" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff,inset 0 -4px 9px rgba(120,105,200,.14);display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Blackjack</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff,inset 0 -4px 9px rgba(120,105,200,.14)"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="position:absolute;left:20px;right:20px;top:118px;height:404px;border-radius:34px;background:radial-gradient(ellipse at 50% 34%,#EAE3FF,#DED5FA 62%,#D4CAF7);box-shadow:inset 0 6px 14px rgba(120,100,200,.28),inset 0 -3px 0 rgba(255,255,255,.7)"></div>
+
+<div style="position:absolute;left:20px;right:20px;top:118px;height:404px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 0 28px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:rgba(255,255,255,.72);font:800 13px 'Nunito';color:#5B5580;box-shadow:inset 0 1px 0 #fff">Dealer<span style="font:900 14px 'Nunito';color:#171727">17</span></div>
+<div style="display:flex;align-items:flex-end;height:112px">
+<div style="width:78px;height:108px;border-radius:15px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(-7deg);box-shadow:0 14px 20px -8px rgba(80,50,160,.45),inset 0 -5px 9px rgba(140,120,200,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 20px 'Nunito';line-height:1">10</b><b style="font:900 24px 'Nunito';line-height:1;align-self:flex-end">&#9827;</b></div>
+<div style="width:78px;height:108px;border-radius:15px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(6deg);margin-left:-22px;box-shadow:0 14px 20px -8px rgba(80,50,160,.45),inset 0 -5px 9px rgba(140,120,200,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 20px 'Nunito';line-height:1;color:#F0556B">7</b><b style="font:900 24px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9830;</b></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="display:flex;align-items:flex-end;height:112px">
+<div style="width:78px;height:108px;border-radius:15px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(-6deg);box-shadow:0 14px 20px -8px rgba(80,50,160,.45),inset 0 -5px 9px rgba(140,120,200,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 20px 'Nunito';line-height:1">A</b><b style="font:900 24px 'Nunito';line-height:1;align-self:flex-end">&#9824;</b></div>
+<div style="width:78px;height:108px;border-radius:15px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(7deg);margin-left:-22px;box-shadow:0 14px 20px -8px rgba(80,50,160,.45),inset 0 -5px 9px rgba(140,120,200,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 20px 'Nunito';line-height:1;color:#F0556B">9</b><b style="font:900 24px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9829;</b></div>
+</div>
+<div style="display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:linear-gradient(180deg,#A08EFF,#8264F2);font:800 13px 'Nunito';color:rgba(255,255,255,.85);box-shadow:0 8px 14px -6px rgba(120,90,240,.6),inset 0 2px 0 rgba(255,255,255,.35)">You<span style="font:900 14px 'Nunito';color:#fff">20</span></div>
+</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:302px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:36px 36px 48px 48px;padding:22px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.3),inset 0 2px 0 #fff">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+<span style="font:800 13px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Bet</span>
+<div style="display:flex;align-items:center;gap:10px">
+<span style="width:38px;height:38px;border-radius:14px;background:#EFEBFC;display:grid;place-items:center;font:900 20px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.22)">&#8722;</span>
+<span style="min-width:96px;text-align:center;font:900 22px 'Nunito'">100</span>
+<span style="width:38px;height:38px;border-radius:14px;background:#EFEBFC;display:grid;place-items:center;font:900 20px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.22)">+</span>
+</div>
+</div>
+<div style="display:flex;gap:9px;justify-content:space-between;margin-bottom:16px">
+<span style="flex:1;height:48px;border-radius:50%;background:linear-gradient(170deg,#B7EEDF,#5CD2AF);display:grid;place-items:center;font:900 14px 'Nunito';color:#0B6B53;box-shadow:0 7px 12px -5px rgba(15,130,105,.5),inset 0 2px 0 rgba(255,255,255,.6),inset 0 -5px 9px rgba(5,90,70,.25)">10</span>
+<span style="flex:1;height:48px;border-radius:50%;background:linear-gradient(170deg,#A8D9FF,#5CA9F5);display:grid;place-items:center;font:900 14px 'Nunito';color:#0C4A85;box-shadow:0 7px 12px -5px rgba(30,100,180,.5),inset 0 2px 0 rgba(255,255,255,.6),inset 0 -5px 9px rgba(10,50,110,.25)">25</span>
+<span style="flex:1;height:48px;border-radius:50%;background:linear-gradient(170deg,#FFD8E6,#FF8FBB);display:grid;place-items:center;font:900 14px 'Nunito';color:#8C1450;box-shadow:0 7px 12px -5px rgba(190,50,110,.5),inset 0 2px 0 rgba(255,255,255,.6),inset 0 -5px 9px rgba(140,15,70,.25)">50</span>
+<span style="flex:1;height:48px;border-radius:50%;background:linear-gradient(170deg,#C3B4FF,#8264F2);display:grid;place-items:center;font:900 14px 'Nunito';color:#fff;box-shadow:0 9px 14px -5px rgba(120,90,240,.7),0 0 0 3.5px #F7F5FF,0 0 0 6.5px #8264F2,inset 0 2px 0 rgba(255,255,255,.45)">100</span>
+<span style="flex:1;height:48px;border-radius:50%;background:linear-gradient(170deg,#FFE6A8,#FFC53D);display:grid;place-items:center;font:900 14px 'Nunito';color:#8A5A00;box-shadow:0 7px 12px -5px rgba(160,100,10,.5),inset 0 2px 0 rgba(255,255,255,.7),inset 0 -5px 9px rgba(140,85,0,.25)">500</span>
+</div>
+<div style="display:flex;gap:12px;margin-bottom:11px">
+<span style="flex:1;height:60px;border-radius:22px;background:linear-gradient(180deg,#7FE3C6,#3FC7A2);display:grid;place-items:center;font:900 18px 'Nunito';color:#fff;box-shadow:0 14px 20px -8px rgba(15,130,105,.6),0 4px 0 #2CAF8B,inset 0 2px 0 rgba(255,255,255,.5)">Hit</span>
+<span style="flex:1;height:60px;border-radius:22px;background:linear-gradient(180deg,#FF9E8E,#F4695A);display:grid;place-items:center;font:900 18px 'Nunito';color:#fff;box-shadow:0 14px 20px -8px rgba(190,70,55,.6),0 4px 0 #DB5344,inset 0 2px 0 rgba(255,255,255,.45)">Stand</span>
+</div>
+<div style="display:flex;gap:12px">
+<span style="flex:1;height:48px;border-radius:18px;background:#EFEBFC;display:grid;place-items:center;font:800 15px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2),inset 0 -2px 0 rgba(255,255,255,.9)">Double</span>
+<span style="flex:1;height:48px;border-radius:18px;background:#EFEBFC;display:grid;place-items:center;font:800 15px 'Nunito';color:#C0BBD4;box-shadow:inset 0 3px 6px rgba(120,105,200,.14)">Split</span>
+</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Blackjack</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Hand in play</div></div></sc-if>
+</div>
+
+<!-- ══════════ BLACKJACK — WIN ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Blackjack Win" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Blackjack</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito';color:#22A67F">10,842</span></div>
+</div>
+
+<div style="position:absolute;left:20px;right:20px;top:118px;height:404px;border-radius:34px;background:radial-gradient(ellipse at 50% 40%,#DFFAF0,#CFF3E6 62%,#C1EDDC);box-shadow:inset 0 6px 14px rgba(40,160,130,.25),inset 0 -3px 0 rgba(255,255,255,.8);overflow:hidden">
+<span style="position:absolute;left:36px;top:38px;width:9px;height:16px;border-radius:3px;background:#FFD966;transform:rotate(24deg)"></span>
+<span style="position:absolute;left:88px;top:20px;width:8px;height:14px;border-radius:3px;background:#FF91BD;transform:rotate(-34deg)"></span>
+<span style="position:absolute;left:150px;top:46px;width:10px;height:10px;border-radius:50%;background:#65B9FF"></span>
+<span style="position:absolute;left:212px;top:24px;width:9px;height:16px;border-radius:3px;background:#8F7CF7;transform:rotate(48deg)"></span>
+<span style="position:absolute;left:276px;top:52px;width:8px;height:14px;border-radius:3px;background:#FF867A;transform:rotate(-18deg)"></span>
+<span style="position:absolute;left:308px;top:110px;width:9px;height:9px;border-radius:50%;background:#FFD966"></span>
+<span style="position:absolute;left:24px;top:132px;width:8px;height:15px;border-radius:3px;background:#71DFC0;transform:rotate(62deg)"></span>
+<span style="position:absolute;left:60px;top:230px;width:9px;height:16px;border-radius:3px;background:#FF91BD;transform:rotate(12deg)"></span>
+<span style="position:absolute;left:288px;top:250px;width:8px;height:14px;border-radius:3px;background:#8F7CF7;transform:rotate(-52deg)"></span>
+<span style="position:absolute;left:120px;top:322px;width:9px;height:9px;border-radius:50%;background:#FF867A"></span>
+<span style="position:absolute;left:250px;top:334px;width:8px;height:15px;border-radius:3px;background:#65B9FF;transform:rotate(30deg)"></span>
+<span style="position:absolute;left:184px;top:352px;width:9px;height:9px;border-radius:50%;background:#FFD966"></span>
+</div>
+
+<div style="position:absolute;left:20px;right:20px;top:118px;height:404px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px 0 26px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:rgba(255,255,255,.75);font:800 13px 'Nunito';color:#5B5580">Dealer<span style="font:900 14px 'Nunito';color:#171727">17</span></div>
+<div style="display:flex;align-items:flex-end;height:96px;opacity:.62">
+<div style="width:70px;height:96px;border-radius:14px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(-7deg);box-shadow:0 12px 18px -8px rgba(40,120,100,.4);padding:9px 10px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 18px 'Nunito';line-height:1">10</b><b style="font:900 21px 'Nunito';line-height:1;align-self:flex-end">&#9827;</b></div>
+<div style="width:70px;height:96px;border-radius:14px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(6deg);margin-left:-20px;box-shadow:0 12px 18px -8px rgba(40,120,100,.4);padding:9px 10px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 18px 'Nunito';line-height:1;color:#F0556B">7</b><b style="font:900 21px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9830;</b></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="display:flex;align-items:center;gap:9px;padding:11px 22px;border-radius:99px;background:linear-gradient(180deg,#7FE3C6,#2FBE97);box-shadow:0 16px 24px -10px rgba(15,150,115,.7),0 4px 0 #23A583,inset 0 2px 0 rgba(255,255,255,.5)"><span style="width:26px;height:26px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 -4px 7px rgba(160,100,0,.35),inset 0 2px 0 rgba(255,255,255,.8)"></span><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:24px;color:#fff;line-height:1">+200</span></div>
+<div style="font:900 15px 'Nunito';color:#1B8A6C">You win with 20</div>
+</div>
+
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<div style="display:flex;align-items:flex-end;height:112px">
+<div style="width:78px;height:108px;border-radius:15px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(-6deg);box-shadow:0 16px 22px -8px rgba(20,130,105,.45),inset 0 -5px 9px rgba(140,120,200,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 20px 'Nunito';line-height:1">A</b><b style="font:900 24px 'Nunito';line-height:1;align-self:flex-end">&#9824;</b></div>
+<div style="width:78px;height:108px;border-radius:15px;background:linear-gradient(170deg,#fff,#F3EEFF);transform:rotate(7deg);margin-left:-22px;box-shadow:0 16px 22px -8px rgba(20,130,105,.45),inset 0 -5px 9px rgba(140,120,200,.18),inset 0 3px 0 #fff;padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between"><b style="font:900 20px 'Nunito';line-height:1;color:#F0556B">9</b><b style="font:900 24px 'Nunito';line-height:1;align-self:flex-end;color:#F0556B">&#9829;</b></div>
+</div>
+<div style="display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:linear-gradient(180deg,#7FE3C6,#3FC7A2);font:800 13px 'Nunito';color:rgba(255,255,255,.9);box-shadow:0 8px 14px -6px rgba(15,130,105,.6),inset 0 2px 0 rgba(255,255,255,.5)">You<span style="font:900 14px 'Nunito';color:#fff">20</span></div>
+</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:302px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:36px 36px 48px 48px;padding:26px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.3),inset 0 2px 0 #fff">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:0 4px;margin-bottom:18px">
+<div><div style="font:800 12px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Bet</div><div style="font:900 20px 'Nunito';margin-top:2px">100</div></div>
+<div style="text-align:right"><div style="font:800 12px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Payout</div><div style="font:900 20px 'Nunito';color:#22A67F;margin-top:2px">200</div></div>
+</div>
+<div style="height:62px;border-radius:24px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 19px 'Nunito';color:#fff;box-shadow:0 16px 24px -10px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45);margin-bottom:12px">Play again</div>
+<div style="display:flex;gap:12px">
+<span style="flex:1;height:52px;border-radius:20px;background:#EFEBFC;display:grid;place-items:center;font:800 15px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2),inset 0 -2px 0 rgba(255,255,255,.9)">Change bet</span>
+<span style="flex:1;height:52px;border-radius:20px;background:#EFEBFC;display:grid;place-items:center;font:800 15px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2),inset 0 -2px 0 rgba(255,255,255,.9)">Leave table</span>
+</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Blackjack — Win</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Celebration state</div></div></sc-if>
+</div>
+
+<!-- ══════════ ROULETTE ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Roulette" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Roulette</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="height:236px;display:flex;align-items:center;justify-content:center;margin-top:12px;position:relative">
+<div style="position:absolute;width:230px;height:230px;border-radius:50%;background:linear-gradient(170deg,#fff,#DCD3F4);box-shadow:0 26px 40px -14px rgba(84,64,170,.5),inset 0 -12px 22px rgba(120,100,180,.32),inset 0 6px 0 #fff;display:grid;place-items:center">
+<div style="width:186px;height:186px;border-radius:50%;background:repeating-conic-gradient(#2E2A55 0 15deg,#F0556B 0 30deg);box-shadow:inset 0 -10px 20px rgba(0,0,0,.4);display:grid;place-items:center">
+<div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(170deg,#B7A4FF,#7C5DF0);box-shadow:0 8px 14px rgba(0,0,0,.35),inset 0 4px 0 rgba(255,255,255,.4),inset 0 -10px 18px rgba(45,15,130,.4);display:grid;place-items:center">
+<div style="width:66px;height:66px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 3px 0 rgba(255,255,255,.85),inset 0 -8px 14px rgba(160,100,0,.35),0 4px 8px rgba(0,0,0,.3);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;color:#B8791A">17</div>
+</div>
+</div>
+</div>
+<span style="position:absolute;top:34px;margin-left:112px;width:22px;height:22px;border-radius:50%;background:linear-gradient(170deg,#fff,#E4DDF6);box-shadow:0 5px 9px rgba(0,0,0,.45),inset 0 3px 0 #fff"></span>
+<span style="position:absolute;top:2px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:18px solid #FF867A;filter:drop-shadow(0 4px 5px rgba(160,60,45,.5))"></span>
+</div>
+
+<div style="display:flex;gap:8px;padding:6px 20px 0;align-items:center">
+<span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.06em;text-transform:uppercase;margin-right:2px">Recent</span>
+<span style="width:34px;height:34px;border-radius:50%;background:#F0556B;color:#fff;font:900 14px 'Nunito';display:grid;place-items:center;box-shadow:0 5px 9px -4px rgba(190,40,70,.6),inset 0 2px 0 rgba(255,255,255,.3)">17</span>
+<span style="width:34px;height:34px;border-radius:50%;background:#2E2A55;color:#fff;font:900 14px 'Nunito';display:grid;place-items:center;box-shadow:0 5px 9px -4px rgba(20,15,60,.6),inset 0 2px 0 rgba(255,255,255,.25)">3</span>
+<span style="width:34px;height:34px;border-radius:50%;background:#F0556B;color:#fff;font:900 14px 'Nunito';display:grid;place-items:center;box-shadow:0 5px 9px -4px rgba(190,40,70,.6),inset 0 2px 0 rgba(255,255,255,.3)">26</span>
+<span style="width:34px;height:34px;border-radius:50%;background:#3FC7A2;color:#fff;font:900 14px 'Nunito';display:grid;place-items:center;box-shadow:0 5px 9px -4px rgba(15,130,105,.6),inset 0 2px 0 rgba(255,255,255,.35)">0</span>
+<span style="width:34px;height:34px;border-radius:50%;background:#2E2A55;color:#fff;font:900 14px 'Nunito';display:grid;place-items:center;box-shadow:0 5px 9px -4px rgba(20,15,60,.6),inset 0 2px 0 rgba(255,255,255,.25)">11</span>
+<span style="width:34px;height:34px;border-radius:50%;background:#EFEBFC;color:#B4AFCB;font:900 14px 'Nunito';display:grid;place-items:center">29</span>
+</div>
+
+<div style="padding:16px 20px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px">
+<span style="height:52px;border-radius:18px;background:linear-gradient(180deg,#FF7E92,#EE4A63);display:grid;place-items:center;font:900 15px 'Nunito';color:#fff;box-shadow:0 10px 16px -7px rgba(190,40,70,.55),0 3px 0 #D63A52,inset 0 2px 0 rgba(255,255,255,.35)">Red</span>
+<span style="height:52px;border-radius:18px;background:linear-gradient(180deg,#4A4470,#2E2A55);display:grid;place-items:center;font:900 15px 'Nunito';color:#fff;box-shadow:0 10px 16px -7px rgba(20,15,60,.55),0 3px 0 #201C42,inset 0 2px 0 rgba(255,255,255,.28)">Black</span>
+<span style="height:52px;border-radius:18px;background:linear-gradient(180deg,#7FE3C6,#3FC7A2);display:grid;place-items:center;font:900 15px 'Nunito';color:#fff;box-shadow:0 10px 16px -7px rgba(15,130,105,.55),0 3px 0 #2CAF8B,inset 0 2px 0 rgba(255,255,255,.45);position:relative">Zero<span style="position:absolute;top:-9px;right:-6px;width:26px;height:26px;border-radius:50%;background:linear-gradient(170deg,#C3B4FF,#8264F2);box-shadow:0 4px 8px -2px rgba(120,90,240,.7),inset 0 2px 0 rgba(255,255,255,.45);font:900 10px 'Nunito';color:#fff;display:grid;place-items:center">50</span></span>
+<span style="height:48px;border-radius:18px;background:#fff;display:grid;place-items:center;font:800 15px 'Nunito';color:#5B5580;box-shadow:0 6px 12px -7px rgba(93,74,180,.45),inset 0 -3px 7px rgba(120,105,200,.12)">Even</span>
+<span style="height:48px;border-radius:18px;background:#fff;display:grid;place-items:center;font:800 15px 'Nunito';color:#5B5580;box-shadow:0 6px 12px -7px rgba(93,74,180,.45),inset 0 -3px 7px rgba(120,105,200,.12)">Odd</span>
+<span style="height:48px;border-radius:18px;background:#fff;display:grid;place-items:center;font:800 15px 'Nunito';color:#5B5580;box-shadow:0 6px 12px -7px rgba(93,74,180,.45),inset 0 -3px 7px rgba(120,105,200,.12)">1&#8211;18</span>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:186px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:34px 34px 48px 48px;padding:16px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.32),inset 0 2px 0 #fff">
+<div style="width:44px;height:5px;border-radius:3px;background:#DDD7F0;margin:0 auto 14px"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+<div style="display:flex;gap:8px">
+<span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(170deg,#B7EEDF,#5CD2AF);display:grid;place-items:center;font:900 12px 'Nunito';color:#0B6B53;box-shadow:0 6px 10px -4px rgba(15,130,105,.5),inset 0 2px 0 rgba(255,255,255,.6)">10</span>
+<span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(170deg,#C3B4FF,#8264F2);display:grid;place-items:center;font:900 12px 'Nunito';color:#fff;box-shadow:0 8px 12px -4px rgba(120,90,240,.7),0 0 0 3px #fff,0 0 0 5.5px #8264F2,inset 0 2px 0 rgba(255,255,255,.45)">50</span>
+<span style="width:40px;height:40px;border-radius:50%;background:linear-gradient(170deg,#FFE6A8,#FFC53D);display:grid;place-items:center;font:900 11px 'Nunito';color:#8A5A00;box-shadow:0 6px 10px -4px rgba(160,100,10,.5),inset 0 2px 0 rgba(255,255,255,.7)">100</span>
+</div>
+<div style="text-align:right"><div style="font:800 11px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Total bet</div><div style="font:900 19px 'Nunito';margin-top:1px">150</div></div>
+</div>
+<div style="display:flex;gap:10px">
+<span style="width:52px;height:56px;border-radius:20px;background:#EFEBFC;display:grid;place-items:center;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#6C6890" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6.5 7l1 13h9l1-13"></path></svg></span>
+<span style="width:52px;height:56px;border-radius:20px;background:#EFEBFC;display:grid;place-items:center;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#6C6890" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2 6"></path><path d="M20 5v6h-6"></path></svg></span>
+<span style="flex:1;height:56px;border-radius:22px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 18px 'Nunito';color:#fff;box-shadow:0 14px 22px -9px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45)">Spin</span>
+</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Roulette</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Result &middot; 17 red</div></div></sc-if>
+</div>
+
+<!-- ══════════ SLOTS ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Slots" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Clay Reels</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="padding:44px 24px 0">
+<div style="border-radius:34px;background:linear-gradient(170deg,#FFC5DC,#FF7FB0);padding:24px 20px;box-shadow:0 24px 36px -14px rgba(190,50,110,.5),0 6px 10px -4px rgba(190,50,110,.3),inset 0 4px 0 rgba(255,255,255,.5),inset 0 -16px 26px rgba(140,15,70,.2);position:relative">
+<div style="display:flex;justify-content:center;margin-bottom:16px"><span style="padding:6px 16px;border-radius:99px;background:rgba(255,255,255,.55);font:900 12px 'Nunito';color:#A81E5E;letter-spacing:.08em">3 REELS &middot; 1 LINE</span></div>
+<div style="display:flex;gap:11px">
+<div style="flex:1;height:150px;border-radius:20px;background:#F3EDFB;box-shadow:inset 0 6px 12px rgba(120,100,180,.35),inset 0 -3px 0 rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:hidden">
+<span style="font:900 22px 'Nunito';color:#C9C2E0;opacity:.6">&#9670;</span>
+<span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:44px;color:#8264F2;line-height:1">7</span>
+<span style="font:900 22px 'Nunito';color:#C9C2E0;opacity:.6">&#9733;</span>
+</div>
+<div style="flex:1;height:150px;border-radius:20px;background:#F3EDFB;box-shadow:inset 0 6px 12px rgba(120,100,180,.35),inset 0 -3px 0 rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:hidden">
+<span style="font:900 22px 'Nunito';color:#C9C2E0;opacity:.6">&#9733;</span>
+<span style="font:900 42px 'Nunito';color:#FF7FB0;line-height:1">&#9829;</span>
+<span style="font:900 22px 'Nunito';color:#C9C2E0;opacity:.6">&#9670;</span>
+</div>
+<div style="flex:1;height:150px;border-radius:20px;background:#F3EDFB;box-shadow:inset 0 6px 12px rgba(120,100,180,.35),inset 0 -3px 0 rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:hidden">
+<span style="font:900 22px 'Nunito';color:#C9C2E0;opacity:.6">&#9829;</span>
+<span style="font:900 42px 'Nunito';color:#4EA3F5;line-height:1">&#9670;</span>
+<span style="font:900 22px 'Nunito';color:#C9C2E0;opacity:.6">7</span>
+</div>
+</div>
+<span style="position:absolute;left:8px;top:50%;margin-top:12px;width:10px;height:10px;border-radius:50%;background:#FFD966;box-shadow:0 2px 4px rgba(140,15,70,.4)"></span>
+<span style="position:absolute;right:8px;top:50%;margin-top:12px;width:10px;height:10px;border-radius:50%;background:#FFD966;box-shadow:0 2px 4px rgba(140,15,70,.4)"></span>
+</div>
+</div>
+
+<div style="display:flex;justify-content:center;padding:34px 0 0"><span style="padding:10px 22px;border-radius:99px;background:#EFEBFC;font:800 14px 'Nunito';color:#8C88A6;box-shadow:inset 0 3px 6px rgba(120,105,200,.18)">Spin to play &middot; last win 0</span></div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:250px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:36px 36px 48px 48px;padding:22px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.3),inset 0 2px 0 #fff">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+<span style="font:800 13px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Bet per spin</span>
+<div style="display:flex;align-items:center;gap:10px">
+<span style="width:38px;height:38px;border-radius:14px;background:#EFEBFC;display:grid;place-items:center;font:900 20px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.22)">&#8722;</span>
+<span style="min-width:76px;text-align:center;font:900 22px 'Nunito'">50</span>
+<span style="width:38px;height:38px;border-radius:14px;background:#EFEBFC;display:grid;place-items:center;font:900 20px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.22)">+</span>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:14px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<span style="height:46px;border-radius:18px;background:#EFEBFC;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 16px;font:800 14px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)">Auto spin<i style="width:44px;height:26px;border-radius:99px;background:#DCD5F2;display:flex;align-items:center;padding:0 3px;box-shadow:inset 0 2px 4px rgba(120,105,200,.3)"><b style="width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(93,74,180,.4)"></b></i></span>
+<span style="height:46px;border-radius:18px;background:#EFEBFC;display:flex;align-items:center;padding:0 16px;font:800 14px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)">Paytable</span>
+</div>
+<div style="width:106px;height:106px;border-radius:50%;background:linear-gradient(180deg,#A08EFF,#8264F2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;box-shadow:0 20px 30px -12px rgba(120,90,240,.75),0 6px 0 #6A4CD8,inset 0 3px 0 rgba(255,255,255,.45),inset 0 -12px 20px rgba(60,30,150,.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"></path><path d="M20 3v5h-5"></path></svg><span style="font:900 16px 'Nunito';color:#fff">Spin</span></div>
+</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Slots</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Idle state</div></div></sc-if>
+</div>
+
+<!-- ══════════ SLOTS — JACKPOT ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Slots Jackpot" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<span style="position:absolute;left:40px;top:96px;width:10px;height:18px;border-radius:3px;background:#FFD966;transform:rotate(24deg)"></span>
+<span style="position:absolute;left:104px;top:76px;width:9px;height:16px;border-radius:3px;background:#71DFC0;transform:rotate(-34deg)"></span>
+<span style="position:absolute;left:176px;top:100px;width:11px;height:11px;border-radius:50%;background:#65B9FF"></span>
+<span style="position:absolute;left:246px;top:74px;width:10px;height:18px;border-radius:3px;background:#8F7CF7;transform:rotate(48deg)"></span>
+<span style="position:absolute;left:314px;top:104px;width:9px;height:16px;border-radius:3px;background:#FF867A;transform:rotate(-18deg)"></span>
+<span style="position:absolute;left:28px;top:206px;width:10px;height:10px;border-radius:50%;background:#FF91BD"></span>
+<span style="position:absolute;left:344px;top:230px;width:9px;height:17px;border-radius:3px;background:#FFD966;transform:rotate(62deg)"></span>
+<span style="position:absolute;left:22px;top:352px;width:10px;height:18px;border-radius:3px;background:#71DFC0;transform:rotate(12deg)"></span>
+<span style="position:absolute;left:350px;top:376px;width:9px;height:16px;border-radius:3px;background:#8F7CF7;transform:rotate(-52deg)"></span>
+<span style="position:absolute;left:56px;top:430px;width:11px;height:11px;border-radius:50%;background:#FF867A"></span>
+<span style="position:absolute;left:318px;top:462px;width:10px;height:18px;border-radius:3px;background:#65B9FF;transform:rotate(30deg)"></span>
+
+<div style="padding:16px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Clay Reels</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito';color:#22A67F">15,642</span></div>
+</div>
+
+<div style="padding:28px 24px 0;position:relative">
+<div style="border-radius:34px;background:linear-gradient(170deg,#FFD98F,#FFB13D);padding:22px 20px;box-shadow:0 26px 40px -14px rgba(180,110,10,.55),0 6px 10px -4px rgba(180,110,10,.32),inset 0 4px 0 rgba(255,255,255,.6),inset 0 -16px 26px rgba(140,80,0,.2),0 0 0 5px rgba(255,214,102,.35);position:relative">
+<div style="display:flex;justify-content:center;margin-bottom:16px"><span style="padding:6px 18px;border-radius:99px;background:rgba(255,255,255,.65);font:900 12px 'Nunito';color:#9A6200;letter-spacing:.1em">TRIPLE SEVEN</span></div>
+<div style="display:flex;gap:11px">
+<div style="flex:1;height:130px;border-radius:20px;background:#FFF6E2;box-shadow:inset 0 6px 12px rgba(180,130,20,.3),inset 0 -3px 0 rgba(255,255,255,.9);display:grid;place-items:center"><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:62px;color:#F0556B;line-height:1">7</span></div>
+<div style="flex:1;height:130px;border-radius:20px;background:#FFF6E2;box-shadow:inset 0 6px 12px rgba(180,130,20,.3),inset 0 -3px 0 rgba(255,255,255,.9);display:grid;place-items:center"><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:62px;color:#F0556B;line-height:1">7</span></div>
+<div style="flex:1;height:130px;border-radius:20px;background:#FFF6E2;box-shadow:inset 0 6px 12px rgba(180,130,20,.3),inset 0 -3px 0 rgba(255,255,255,.9);display:grid;place-items:center"><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:62px;color:#F0556B;line-height:1">7</span></div>
+</div>
+</div>
+</div>
+
+<div style="padding:30px 24px 0;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:40px;line-height:1;color:#171727">Jackpot!</div>
+<div style="display:flex;align-items:center;gap:11px;padding:13px 26px;border-radius:99px;background:linear-gradient(180deg,#7FE3C6,#2FBE97);box-shadow:0 18px 26px -10px rgba(15,150,115,.7),0 5px 0 #23A583,inset 0 3px 0 rgba(255,255,255,.5)"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 -5px 9px rgba(160,100,0,.35),inset 0 2px 0 rgba(255,255,255,.8)"></span><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:30px;color:#fff;line-height:1">+5,000</span></div>
+<div style="font:700 15px 'Nunito';color:#77758A">100&#215; your 50 coin stake</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:176px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:36px 36px 48px 48px;padding:24px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.3),inset 0 2px 0 #fff">
+<div style="height:62px;border-radius:24px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 19px 'Nunito';color:#fff;box-shadow:0 16px 24px -10px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45);margin-bottom:12px">Spin again</div>
+<div style="height:50px;border-radius:20px;background:#EFEBFC;display:grid;place-items:center;font:800 15px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2),inset 0 -2px 0 rgba(255,255,255,.9)">Collect and exit</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Slots — Jackpot</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Celebration state</div></div></sc-if>
+</div>
+
+<!-- ══════════ PLINKO ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Plinko" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Plinko</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="padding:18px 20px 0">
+<div style="border-radius:32px;background:linear-gradient(170deg,#C4B4FF,#8E74F5);padding:22px 16px 18px;box-shadow:0 24px 36px -14px rgba(90,55,200,.55),0 6px 10px -4px rgba(90,55,200,.3),inset 0 4px 0 rgba(255,255,255,.45),inset 0 -16px 26px rgba(45,15,130,.24);position:relative">
+<div style="display:flex;justify-content:center;height:26px;position:relative"><span style="width:26px;height:26px;border-radius:50%;background:linear-gradient(165deg,#fff,#E2DAF6);box-shadow:0 8px 12px -3px rgba(45,15,130,.55),inset 0 -4px 7px rgba(120,100,180,.3),inset 0 3px 0 #fff"></span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:15px;padding:16px 0 18px">
+<div style="display:flex;gap:26px"><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i></div>
+<div style="display:flex;gap:26px"><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i></div>
+<div style="display:flex;gap:26px"><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i></div>
+<div style="display:flex;gap:26px"><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i></div>
+<div style="display:flex;gap:26px"><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i></div>
+<div style="display:flex;gap:26px"><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i><i style="width:13px;height:13px;border-radius:50%;background:linear-gradient(170deg,#fff,#D9D0F2);box-shadow:0 3px 5px rgba(45,15,130,.4),inset 0 -2px 3px rgba(120,100,180,.4)"></i></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px">
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#FF9E8E,#F4695A);display:grid;place-items:center;font:900 12px 'Nunito';color:#fff;box-shadow:0 4px 0 #DB5344,inset 0 2px 0 rgba(255,255,255,.4)">10&#215;</span>
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#FFCE8A,#FFAE3D);display:grid;place-items:center;font:900 12px 'Nunito';color:#fff;box-shadow:0 4px 0 #E6961F,inset 0 2px 0 rgba(255,255,255,.45)">3&#215;</span>
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#FFE49A,#FFD04D);display:grid;place-items:center;font:900 12px 'Nunito';color:#8A5A00;box-shadow:0 4px 0 #E8B92C,inset 0 2px 0 rgba(255,255,255,.6)">1.4&#215;</span>
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#E8E2FA,#CFC5EE);display:grid;place-items:center;font:900 12px 'Nunito';color:#6C6890;box-shadow:0 4px 0 #B8AEDF,inset 0 2px 0 rgba(255,255,255,.7)">0.5&#215;</span>
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#FFE49A,#FFD04D);display:grid;place-items:center;font:900 12px 'Nunito';color:#8A5A00;box-shadow:0 4px 0 #E8B92C,inset 0 2px 0 rgba(255,255,255,.6)">1.4&#215;</span>
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#FFCE8A,#FFAE3D);display:grid;place-items:center;font:900 12px 'Nunito';color:#fff;box-shadow:0 4px 0 #E6961F,inset 0 2px 0 rgba(255,255,255,.45)">3&#215;</span>
+<span style="height:38px;border-radius:12px;background:linear-gradient(180deg,#FF9E8E,#F4695A);display:grid;place-items:center;font:900 12px 'Nunito';color:#fff;box-shadow:0 4px 0 #DB5344,inset 0 2px 0 rgba(255,255,255,.4)">10&#215;</span>
+</div>
+</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:222px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:36px 36px 48px 48px;padding:20px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.3),inset 0 2px 0 #fff">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+<span style="font:800 13px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Bet</span>
+<div style="display:flex;align-items:center;gap:10px">
+<span style="width:36px;height:36px;border-radius:13px;background:#EFEBFC;display:grid;place-items:center;font:900 19px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.22)">&#8722;</span>
+<span style="min-width:70px;text-align:center;font:900 21px 'Nunito'">25</span>
+<span style="width:36px;height:36px;border-radius:13px;background:#EFEBFC;display:grid;place-items:center;font:900 19px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.22)">+</span>
+</div>
+</div>
+<div style="display:flex;gap:11px;margin-bottom:14px">
+<div style="flex:1"><div style="font:800 11px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px">Risk</div><div style="height:42px;border-radius:16px;background:#EFEBFC;display:flex;padding:4px;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><span style="flex:1;border-radius:12px;display:grid;place-items:center;font:800 12px 'Nunito';color:#9A95B8">Low</span><span style="flex:1;border-radius:12px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:800 12px 'Nunito';color:#fff;box-shadow:0 4px 8px -3px rgba(120,90,240,.6),inset 0 2px 0 rgba(255,255,255,.4)">Med</span><span style="flex:1;border-radius:12px;display:grid;place-items:center;font:800 12px 'Nunito';color:#9A95B8">High</span></div></div>
+<div style="width:104px"><div style="font:800 11px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px">Rows</div><div style="height:42px;border-radius:16px;background:#EFEBFC;display:flex;align-items:center;justify-content:space-between;padding:0 13px;font:900 15px 'Nunito';color:#171727;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><span style="color:#9A95B8">&#8722;</span>6<span style="color:#9A95B8">+</span></div></div>
+</div>
+<div style="height:60px;border-radius:22px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:grid;place-items:center;font:900 18px 'Nunito';color:#fff;box-shadow:0 16px 24px -10px rgba(120,90,240,.65),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45)">Drop Ball</div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Plinko</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Ready to drop</div></div></sc-if>
+</div>
+
+<!-- ══════════ MINES ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Mines" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+<div style="font:900 18px 'Nunito'">Mines</div>
+<div style="display:flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 6px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:14px;color:#B8791A">C</span><span style="font:900 15px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="display:flex;gap:10px;padding:18px 20px 0">
+<div style="flex:1;height:66px;border-radius:22px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 8px 16px -9px rgba(93,74,180,.45),inset 0 -3px 7px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Mines</span><span style="font:900 19px 'Nunito'">3</span></div>
+<div style="flex:1;height:66px;border-radius:22px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 8px 16px -9px rgba(93,74,180,.45),inset 0 -3px 7px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Next</span><span style="font:900 19px 'Nunito';color:#8264F2">1.86&#215;</span></div>
+<div style="flex:1;height:66px;border-radius:22px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 8px 16px -9px rgba(93,74,180,.45),inset 0 -3px 7px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Profit</span><span style="font:900 19px 'Nunito';color:#22A67F">+420</span></div>
+</div>
+
+<div style="padding:18px 20px 0">
+<div style="border-radius:32px;background:linear-gradient(170deg,#9BEBD3,#4CCFAB);padding:18px;box-shadow:0 24px 36px -14px rgba(15,130,105,.5),0 6px 10px -4px rgba(15,130,105,.28),inset 0 4px 0 rgba(255,255,255,.5),inset 0 -16px 26px rgba(5,90,70,.18)">
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:#3BB694;box-shadow:inset 0 4px 9px rgba(4,70,55,.45);display:grid;place-items:center"><i style="width:24px;height:22px;background:linear-gradient(160deg,#BFFCEC,#3ADCB5);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);display:block"></i></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:#3BB694;box-shadow:inset 0 4px 9px rgba(4,70,55,.45);display:grid;place-items:center"><i style="width:24px;height:22px;background:linear-gradient(160deg,#BFFCEC,#3ADCB5);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);display:block"></i></span>
+
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:#3BB694;box-shadow:inset 0 4px 9px rgba(4,70,55,.45);display:grid;place-items:center"><i style="width:24px;height:22px;background:linear-gradient(160deg,#BFFCEC,#3ADCB5);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);display:block"></i></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+
+<span style="height:56px;border-radius:16px;background:#3BB694;box-shadow:inset 0 4px 9px rgba(4,70,55,.45);display:grid;place-items:center"><i style="width:24px;height:22px;background:linear-gradient(160deg,#BFFCEC,#3ADCB5);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);display:block"></i></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:#3BB694;box-shadow:inset 0 4px 9px rgba(4,70,55,.45);display:grid;place-items:center"><i style="width:24px;height:22px;background:linear-gradient(160deg,#BFFCEC,#3ADCB5);clip-path:polygon(50% 0,100% 34%,78% 100%,22% 100%,0 34%);display:block"></i></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+<span style="height:56px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#EDF7F4);box-shadow:0 5px 0 #C8E4DC,0 8px 12px -5px rgba(5,90,70,.35),inset 0 2px 0 #fff"></span>
+</div>
+</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:196px;background:linear-gradient(180deg,#FFFFFF,#F8F5FF);border-radius:36px 36px 48px 48px;padding:20px 22px 0;box-shadow:0 -14px 30px -14px rgba(84,64,170,.3),inset 0 2px 0 #fff">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+<div><div style="font:800 11px 'Nunito';color:#8C88A6;letter-spacing:.05em;text-transform:uppercase">Bet</div><div style="font:900 20px 'Nunito';margin-top:2px">500</div></div>
+<div style="display:flex;gap:9px">
+<span style="padding:9px 15px;border-radius:14px;background:#EFEBFC;font:800 13px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)">&frac12;</span>
+<span style="padding:9px 15px;border-radius:14px;background:#EFEBFC;font:800 13px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)">2&#215;</span>
+<span style="padding:9px 15px;border-radius:14px;background:#EFEBFC;font:800 13px 'Nunito';color:#6C6890;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)">Max</span>
+</div>
+</div>
+<div style="height:64px;border-radius:24px;background:linear-gradient(180deg,#7FE3C6,#2FBE97);display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 16px 24px -10px rgba(15,150,115,.7),0 4px 0 #23A583,inset 0 2px 0 rgba(255,255,255,.5)"><span style="font:900 18px 'Nunito';color:#fff">Cash Out</span><span style="padding:5px 12px;border-radius:99px;background:rgba(255,255,255,.28);font:900 15px 'Nunito';color:#fff">920</span></div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Mines</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Round active &middot; 5 safe</div></div></sc-if>
+</div>
+
+<!-- ══════════ REWARDS ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Rewards" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="padding:10px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:30px;letter-spacing:-.3px">Rewards</div>
+<div style="display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 7px;border-radius:22px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 2px 0 rgba(255,255,255,.85),inset 0 -5px 9px rgba(160,100,0,.35);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:15px;color:#B8791A">C</span><span style="font:900 16px 'Nunito'">10,642</span></div>
+</div>
+
+<div style="padding:20px 20px 0">
+<div style="border-radius:30px;background:linear-gradient(170deg,#fff,#F4F0FF);padding:20px 18px;box-shadow:0 16px 28px -14px rgba(84,64,170,.4),inset 0 2px 0 #fff,inset 0 -6px 14px rgba(120,105,200,.1)">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+<div><div style="font:900 17px 'Nunito'">Daily streak</div><div style="font:700 13px 'Nunito';color:#8C88A6;margin-top:2px">Day 4 of 7 &middot; keep it going</div></div>
+<span style="padding:7px 13px;border-radius:99px;background:#FFF0D6;font:900 13px 'Nunito';color:#B8791A">3 days</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
+<span style="height:54px;border-radius:15px;background:linear-gradient(180deg,#7FE3C6,#3FC7A2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 4px 0 #2CAF8B,inset 0 2px 0 rgba(255,255,255,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><i style="font:900 9.5px 'Nunito';color:#fff;font-style:normal">1</i></span>
+<span style="height:54px;border-radius:15px;background:linear-gradient(180deg,#7FE3C6,#3FC7A2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 4px 0 #2CAF8B,inset 0 2px 0 rgba(255,255,255,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><i style="font:900 9.5px 'Nunito';color:#fff;font-style:normal">2</i></span>
+<span style="height:54px;border-radius:15px;background:linear-gradient(180deg,#7FE3C6,#3FC7A2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 4px 0 #2CAF8B,inset 0 2px 0 rgba(255,255,255,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><i style="font:900 9.5px 'Nunito';color:#fff;font-style:normal">3</i></span>
+<span style="height:54px;border-radius:15px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;box-shadow:0 9px 14px -5px rgba(120,90,240,.7),0 4px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.45)"><i style="width:16px;height:16px;border-radius:50%;background:linear-gradient(165deg,#FFE9AE,#FFC53D);box-shadow:inset 0 -3px 5px rgba(160,100,0,.35);display:block"></i><i style="font:900 9.5px 'Nunito';color:#fff;font-style:normal">4</i></span>
+<span style="height:54px;border-radius:15px;background:#EFEBFC;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><i style="width:14px;height:14px;border-radius:50%;background:#D4CDEC;display:block"></i><i style="font:900 9.5px 'Nunito';color:#B4AFCB;font-style:normal">5</i></span>
+<span style="height:54px;border-radius:15px;background:#EFEBFC;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><i style="width:14px;height:14px;border-radius:50%;background:#D4CDEC;display:block"></i><i style="font:900 9.5px 'Nunito';color:#B4AFCB;font-style:normal">6</i></span>
+<span style="height:54px;border-radius:15px;background:#EFEBFC;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;box-shadow:inset 0 3px 6px rgba(120,105,200,.2)"><i style="width:16px;height:16px;border-radius:5px;background:#D4CDEC;display:block"></i><i style="font:900 9.5px 'Nunito';color:#B4AFCB;font-style:normal">7</i></span>
+</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 20px 0">
+<div style="height:172px;border-radius:28px;background:linear-gradient(170deg,#FFD98F,#FFB13D);padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 28px -12px rgba(180,110,10,.5),inset 0 4px 0 rgba(255,255,255,.55),inset 0 -14px 22px rgba(140,80,0,.18);position:relative;overflow:hidden">
+<span style="position:absolute;right:-16px;top:-20px;width:92px;height:92px;border-radius:50%;background:rgba(255,255,255,.2)"></span>
+<div style="position:relative;width:56px;height:44px;border-radius:6px 6px 18px 18px;background:linear-gradient(170deg,#fff,#F0E9FF);box-shadow:0 10px 14px -5px rgba(140,80,0,.5),inset 0 -5px 9px rgba(140,120,200,.2)"><span style="position:absolute;left:0;right:0;top:9px;height:9px;background:#FF7FB0"></span><span style="position:absolute;left:23px;top:0;bottom:0;width:9px;background:#FF7FB0"></span></div>
+<div><div style="font:900 17px 'Nunito';color:#171727">Daily Bonus</div><div style="font:700 13px 'Nunito';color:rgba(23,23,39,.55);margin-top:2px">Ready to open</div></div>
+</div>
+<div style="height:172px;border-radius:28px;background:linear-gradient(170deg,#C4B4FF,#8E74F5);padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 28px -12px rgba(90,55,200,.55),inset 0 4px 0 rgba(255,255,255,.45),inset 0 -14px 22px rgba(45,15,130,.22);position:relative;overflow:hidden">
+<span style="position:absolute;right:-18px;bottom:-22px;width:96px;height:96px;border-radius:50%;background:rgba(255,255,255,.16)"></span>
+<div style="position:relative;width:52px;height:52px;border-radius:16px;background:linear-gradient(160deg,#fff,#E9E2FF);box-shadow:0 10px 14px -5px rgba(45,15,130,.5),inset 0 -6px 10px rgba(140,120,200,.25);display:grid;place-items:center;font:900 26px 'Nunito';color:#8264F2">?</div>
+<div><div style="font:900 17px 'Nunito';color:#fff">Mystery Box</div><div style="font:700 13px 'Nunito';color:rgba(255,255,255,.7);margin-top:2px">Unlocks in 4h</div></div>
+</div>
+</div>
+
+<div style="padding:14px 20px 0;display:flex;flex-direction:column;gap:12px">
+<div style="height:76px;border-radius:24px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px;box-shadow:0 12px 22px -12px rgba(84,64,170,.45),inset 0 -4px 9px rgba(120,105,200,.1)">
+<span style="width:46px;height:46px;border-radius:16px;background:linear-gradient(170deg,#A8E3FF,#5CB1F5);display:grid;place-items:center;box-shadow:0 7px 11px -4px rgba(30,100,180,.5),inset 0 2px 0 rgba(255,255,255,.6)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"></path></svg></span>
+<div style="flex:1"><div style="font:900 16px 'Nunito'">Weekly Challenge</div><div style="font:700 13px 'Nunito';color:#8C88A6;margin-top:2px">Win 10 rounds &middot; 6 of 10</div></div>
+<span style="font:900 15px 'Nunito';color:#8264F2">+2,000</span>
+</div>
+<div style="height:76px;border-radius:24px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px;box-shadow:0 12px 22px -12px rgba(84,64,170,.45),inset 0 -4px 9px rgba(120,105,200,.1)">
+<span style="width:46px;height:46px;border-radius:16px;background:linear-gradient(170deg,#FFB3CE,#FF7FB0);display:grid;place-items:center;box-shadow:0 7px 11px -4px rgba(180,50,110,.5),inset 0 2px 0 rgba(255,255,255,.55)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v6a5 5 0 0 1-10 0z"></path><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3M9 20h6M12 15v5"></path></svg></span>
+<div style="flex:1"><div style="font:900 16px 'Nunito'">Achievements</div><div style="font:700 13px 'Nunito';color:#8C88A6;margin-top:2px">14 of 40 unlocked</div></div>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0BBD4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+</div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(247,245,255,0),#F7F5FF 46%)"></div>
+<div style="position:absolute;left:16px;right:16px;bottom:26px;height:72px;background:linear-gradient(180deg,#FFFFFF,#F5F2FF);border-radius:30px;display:flex;align-items:center;gap:6px;padding:0 10px;box-shadow:0 20px 32px -14px rgba(84,64,170,.45),0 5px 10px -4px rgba(84,64,170,.22),inset 0 2px 0 #fff,inset 0 -5px 12px rgba(120,105,200,.13)">
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6.5 8 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Home</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2.2"></rect></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Games</span></div>
+<div style="flex:1;height:56px;border-radius:22px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 10px 16px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.4)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11.5" rx="2.4"></rect><path d="M2.5 7.5h19v3.5h-19zM12 7.5v13"></path><path d="M12 7.5S10.5 3 8 3.6C6 4 6.4 7.5 12 7.5zM12 7.5S13.5 3 16 3.6C18 4 17.6 7.5 12 7.5z"></path></svg><span style="font:800 10.5px 'Nunito';color:#fff">Rewards</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Profile</span></div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Rewards</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Streak day 4</div></div></sc-if>
+</div>
+
+<!-- ══════════ PROFILE ══════════ -->
+<div style="display:flex;flex-direction:column;gap:16px;align-items:center">
+<div data-screen-label="Profile" style="width:390px;height:844px;background:#F7F5FF;border-radius:48px;position:relative;overflow:hidden;box-shadow:0 34px 64px -22px rgba(84,64,170,.42),0 10px 22px -10px rgba(84,64,170,.28)">
+<div style="height:56px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 7px"><span style="font:800 15px 'Nunito'">9:41</span><svg width="66" height="12" viewBox="0 0 66 12" fill="#171727"><rect x="0" y="7" width="3" height="5" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect><path d="M23 3.2a9.5 9.5 0 0 1 12 0l-1.5 1.8a7.2 7.2 0 0 0-9 0zM25.8 6.5a5.6 5.6 0 0 1 6.4 0L29 10z"></path><rect x="42" y="1" width="20" height="10" rx="3.2" opacity=".3"></rect><rect x="43.6" y="2.6" width="14" height="6.8" rx="1.8"></rect><rect x="63.4" y="4.4" width="2" height="3.2" rx="1" opacity=".35"></rect></svg></div>
+
+<div style="display:flex;justify-content:flex-end;padding:8px 20px 0"><span style="width:44px;height:44px;border-radius:16px;background:linear-gradient(180deg,#fff,#F4F1FF);box-shadow:0 8px 14px -6px rgba(93,74,180,.4),inset 0 2px 0 #fff;display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A4470" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6h.08A1.7 1.7 0 0 0 10 3.05V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15 4.6a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9v.08a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51 1z"></path></svg></span></div>
+
+<div style="display:flex;flex-direction:column;align-items:center;padding:6px 20px 0">
+<div style="width:100px;height:100px;border-radius:34px;background:linear-gradient(160deg,#FFB3CE,#FF7FB0);display:grid;place-items:center;font-family:'Baloo 2',cursive;font-weight:800;font-size:44px;color:#fff;box-shadow:0 20px 30px -12px rgba(180,50,110,.55),inset 0 4px 0 rgba(255,255,255,.55),inset 0 -14px 22px rgba(150,20,80,.28)">N</div>
+<div style="display:flex;align-items:center;gap:9px;margin-top:16px"><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;line-height:1">Nandan</span><span style="padding:5px 12px;border-radius:99px;background:linear-gradient(180deg,#A08EFF,#8264F2);font:900 12px 'Nunito';color:#fff;box-shadow:0 6px 10px -4px rgba(120,90,240,.6),inset 0 2px 0 rgba(255,255,255,.4)">LV 12</span></div>
+<div style="width:100%;margin-top:16px">
+<div style="display:flex;justify-content:space-between;font:800 12px 'Nunito';color:#8C88A6;margin-bottom:7px"><span>2,140 XP</span><span>3,000 to LV 13</span></div>
+<div style="height:14px;border-radius:99px;background:#E7E1F8;box-shadow:inset 0 3px 6px rgba(120,105,200,.28);padding:2px"><div style="width:71%;height:10px;border-radius:99px;background:linear-gradient(90deg,#A08EFF,#7C5DF0);box-shadow:0 2px 5px rgba(120,90,240,.6)"></div></div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px 20px 0">
+<div style="height:82px;border-radius:24px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 18px;box-shadow:0 12px 22px -12px rgba(84,64,170,.45),inset 0 -4px 9px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Games played</span><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;line-height:1.2">1,284</span></div>
+<div style="height:82px;border-radius:24px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 18px;box-shadow:0 12px 22px -12px rgba(84,64,170,.45),inset 0 -4px 9px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Wins</span><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;line-height:1.2;color:#22A67F">612</span></div>
+<div style="height:82px;border-radius:24px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 18px;box-shadow:0 12px 22px -12px rgba(84,64,170,.45),inset 0 -4px 9px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Best streak</span><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;line-height:1.2">9</span></div>
+<div style="height:82px;border-radius:24px;background:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 18px;box-shadow:0 12px 22px -12px rgba(84,64,170,.45),inset 0 -4px 9px rgba(120,105,200,.1)"><span style="font:800 11px 'Nunito';color:#9A95B8;letter-spacing:.05em;text-transform:uppercase">Favourite</span><span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;line-height:1.2">Mines</span></div>
+</div>
+
+<div style="padding:16px 20px 0;display:flex;flex-direction:column;gap:2px">
+<div style="height:60px;border-radius:20px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px;box-shadow:0 10px 20px -14px rgba(84,64,170,.45)"><span style="width:36px;height:36px;border-radius:13px;background:#FFF0D6;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A81F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v6a5 5 0 0 1-10 0z"></path><path d="M9 20h6M12 15v5"></path></svg></span><span style="flex:1;font:800 16px 'Nunito'">Achievements</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0BBD4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></div>
+<div style="height:60px;border-radius:20px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px;box-shadow:0 10px 20px -14px rgba(84,64,170,.45)"><span style="width:36px;height:36px;border-radius:13px;background:#E4F2FF;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4EA3F5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11M12 20V5M19 20v-6"></path></svg></span><span style="flex:1;font:800 16px 'Nunito'">Statistics</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0BBD4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></div>
+<div style="height:60px;border-radius:20px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px;box-shadow:0 10px 20px -14px rgba(84,64,170,.45)"><span style="width:36px;height:36px;border-radius:13px;background:#EDE7FF;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8264F2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path></svg></span><span style="flex:1;font:800 16px 'Nunito'">Appearance</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0BBD4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></div>
+<div style="height:60px;border-radius:20px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px;box-shadow:0 10px 20px -14px rgba(84,64,170,.45)"><span style="width:36px;height:36px;border-radius:13px;background:#DFF7EF;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2FBE97" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6.5 9H3.5v6h3L11 19z"></path><path d="M15.5 9.5a4 4 0 0 1 0 5"></path></svg></span><span style="flex:1;font:800 16px 'Nunito'">Sound &amp; Haptics</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C0BBD4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></div>
+</div>
+
+<div style="position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(247,245,255,0),#F7F5FF 46%)"></div>
+<div style="position:absolute;left:16px;right:16px;bottom:26px;height:72px;background:linear-gradient(180deg,#FFFFFF,#F5F2FF);border-radius:30px;display:flex;align-items:center;gap:6px;padding:0 10px;box-shadow:0 20px 32px -14px rgba(84,64,170,.45),0 5px 10px -4px rgba(84,64,170,.22),inset 0 2px 0 #fff,inset 0 -5px 12px rgba(120,105,200,.13)">
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6.5 8 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Home</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2.2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2.2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2.2"></rect></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Games</span></div>
+<div style="flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6A1C4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11.5" rx="2.4"></rect><path d="M2.5 7.5h19v3.5h-19zM12 7.5v13"></path><path d="M12 7.5S10.5 3 8 3.6C6 4 6.4 7.5 12 7.5zM12 7.5S13.5 3 16 3.6C18 4 17.6 7.5 12 7.5z"></path></svg><span style="font:800 10.5px 'Nunito';color:#A6A1C4">Rewards</span></div>
+<div style="flex:1;height:56px;border-radius:22px;background:linear-gradient(180deg,#A08EFF,#8264F2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 10px 16px -6px rgba(120,90,240,.6),0 3px 0 #6A4CD8,inset 0 2px 0 rgba(255,255,255,.4)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"></path></svg><span style="font:800 10.5px 'Nunito';color:#fff">Profile</span></div>
+</div>
+<div style="position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:136px;height:5px;border-radius:3px;background:#171727;opacity:.22"></div>
+</div>
+<sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}"><div style="text-align:center"><div style="font:800 16px 'Nunito';color:#2A2540">Profile</div><div style="font:600 13px 'Nunito';color:#7A74A0;margin-top:2px">Level 12</div></div></sc-if>
+</div>
+
+</div>
+</div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSpec&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Board&quot;},&quot;showCaptions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Board&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showSpec: this.props.showSpec ?? true,
+      showCaptions: this.props.showCaptions ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
