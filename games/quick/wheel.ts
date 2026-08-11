@@ -62,4 +62,3 @@ export const spinWheel = (
     won: payout > bet,
   };
 };
-

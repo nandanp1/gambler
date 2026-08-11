@@ -81,4 +81,3 @@ export const settleCrashRound = (
     profit: roundCoins(payout - round.bet),
   };
 };
-

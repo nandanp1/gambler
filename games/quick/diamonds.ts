@@ -27,4 +27,3 @@ export const playDiamonds = (
   const payout = won ? roundCoins(bet * multiplier) : 0;
   return { bet, choice, result, won, multiplier, payout, profit: roundCoins(payout - bet) };
 };
-

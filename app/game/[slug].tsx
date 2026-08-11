@@ -69,4 +69,3 @@ const styles = StyleSheet.create({
   title: { color: colors.text, fontFamily: typography.display, fontSize: 28, marginTop: 18, textAlign: 'center' },
   body: { color: colors.textMuted, fontFamily: typography.uiBold, fontSize: 15, lineHeight: 22, marginTop: 8, textAlign: 'center' },
 });
-

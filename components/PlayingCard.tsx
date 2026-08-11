@@ -39,4 +39,3 @@ const styles = StyleSheet.create({
   red: { color: colors.red },
   backMark: { alignSelf: 'center', backgroundColor: 'rgba(255,255,255,0.36)', borderRadius: 18, flex: 1, marginVertical: 7, width: '68%' },
 });
-

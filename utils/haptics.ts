@@ -13,4 +13,3 @@ export const playHaptic = async (kind: HapticKind, enabled = true): Promise<void
     // Haptics can be unavailable on emulators and older devices.
   }
 };
-

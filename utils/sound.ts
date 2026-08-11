@@ -22,4 +22,3 @@ export const soundManager = {
     return () => listeners.delete(listener);
   },
 };
-

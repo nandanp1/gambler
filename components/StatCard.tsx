@@ -17,4 +17,3 @@ const styles = StyleSheet.create({
   label: { color: colors.textFaint, fontFamily: typography.uiExtra, fontSize: 10.5, letterSpacing: 0.65, textTransform: 'uppercase' },
   value: { fontFamily: typography.display, fontSize: 25, lineHeight: 31, marginTop: 1 },
 });
-

@@ -125,4 +125,3 @@ export const cashOutHiLo = (state: HiLoState): HiLoState => {
   const payout = roundCoins(state.bet * state.multiplier);
   return { ...state, status: 'cashed-out', payout, profit: roundCoins(payout - state.bet) };
 };
-

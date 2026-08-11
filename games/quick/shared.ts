@@ -135,4 +135,3 @@ export const rankHighValue = (rank: Rank): number => rankIndex(rank) + 2;
 export const assertDeckHas = (deck: readonly Card[], count: number): void => {
   if (deck.length < count) throw new RangeError(`Deck needs at least ${count} cards.`);
 };
-

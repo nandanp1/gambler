@@ -14,4 +14,3 @@ export default function IndexScreen() {
 }
 
 const styles = StyleSheet.create({ loading: { alignItems: 'center', backgroundColor: colors.canvas, flex: 1, justifyContent: 'center' } });
-

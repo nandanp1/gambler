@@ -40,4 +40,3 @@ export const playRoshambo = (
   const payout = outcome === 'win' ? roundCoins(bet * 1.9) : outcome === 'tie' ? bet : 0;
   return { bet, player, opponent, outcome, payout, profit: roundCoins(payout - bet) };
 };
-

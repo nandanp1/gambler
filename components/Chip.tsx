@@ -42,4 +42,3 @@ const styles = StyleSheet.create({
   pressed: { transform: [{ translateY: 2 }, { scale: 0.95 }] },
   disabled: { opacity: 0.42 },
 });
-

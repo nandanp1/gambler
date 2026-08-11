@@ -36,4 +36,3 @@ export const GAMES: GameDefinition[] = [
 export const GAME_BY_SLUG = Object.fromEntries(GAMES.map((game) => [game.slug, game])) as Record<GameSlug, GameDefinition>;
 
 export const getFeaturedGames = () => GAMES.filter((game) => game.featured);
-

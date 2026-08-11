@@ -38,4 +38,3 @@ const styles = StyleSheet.create({
   subtitle: { color: colors.textMuted, fontFamily: typography.uiBold, fontSize: 12, marginTop: 2 },
   pressed: { opacity: 0.78, transform: [{ scale: 0.985 }] },
 });
-

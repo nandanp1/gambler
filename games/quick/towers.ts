@@ -26,4 +26,3 @@ export const chooseTowersTile = (state: TowersState, tile: number): TowersState 
   chooseClimbTile(state, tile);
 
 export const cashOutTowers = (state: TowersState): TowersState => cashOutClimb(state);
-

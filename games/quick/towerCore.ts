@@ -135,4 +135,3 @@ export const climbPotentialPayout = (state: ClimbState): number =>
 
 export const climbNextMultiplier = (state: ClimbState): number =>
   roundTo(state.multiplier * climbStepMultiplier(state.config), 4);
-

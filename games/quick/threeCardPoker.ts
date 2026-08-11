@@ -112,4 +112,3 @@ export const playThreeCardPoker = (
     profit: roundCoins(payout - bet),
   };
 };
-

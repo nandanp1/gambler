@@ -58,4 +58,3 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
   },
 });
-

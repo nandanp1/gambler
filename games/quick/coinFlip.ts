@@ -22,4 +22,3 @@ export const flipCoin = (
   const payout = won ? roundCoins(bet * 2) : 0;
   return { bet, choice, result, won, payout, profit: roundCoins(payout - bet) };
 };
-

@@ -17,4 +17,3 @@ const styles = StyleSheet.create({
   row: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', minHeight: 58 },
   title: { color: colors.text, fontFamily: typography.display, fontSize: 30, letterSpacing: -0.3 },
 });
-

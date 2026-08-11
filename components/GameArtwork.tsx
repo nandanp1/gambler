@@ -212,4 +212,3 @@ const styles = StyleSheet.create({
   hiloWrap: { alignItems: 'center', flex: 1, flexDirection: 'row', gap: 24, justifyContent: 'center' },
   baccarat: { alignItems: 'center', flex: 1, flexDirection: 'row', justifyContent: 'center' },
 });
-

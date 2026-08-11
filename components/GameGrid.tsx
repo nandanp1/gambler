@@ -24,4 +24,3 @@ const styles = StyleSheet.create({
   row: { alignItems: 'flex-start', flexDirection: 'row', gap: 14 },
   spacer: { flex: 1 },
 });
-

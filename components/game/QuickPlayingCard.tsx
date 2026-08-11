@@ -8,4 +8,3 @@ const SUITS = { clubs: '♣', diamonds: '♦', hearts: '♥', spades: '♠' } as
 export function QuickPlayingCard({ card, small = false }: { card: Card; small?: boolean }) {
   return <PlayingCard card={{ rank: card.rank, suit: SUITS[card.suit] }} small={small} />;
 }
-

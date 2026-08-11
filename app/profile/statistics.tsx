@@ -68,4 +68,3 @@ const styles = StyleSheet.create({
   net: { fontFamily: typography.uiBlack, fontSize: 14 },
   empty: { color: colors.textMuted, fontFamily: typography.uiBold, fontSize: 14, paddingVertical: 18, textAlign: 'center' },
 });
-

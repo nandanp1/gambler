@@ -57,4 +57,3 @@ const styles = StyleSheet.create({
   title: { color: colors.text, fontFamily: typography.uiBlack, fontSize: 15 },
   description: { color: colors.textMuted, fontFamily: typography.uiBold, fontSize: 12, marginTop: 2 },
 });
-
