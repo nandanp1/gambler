@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Nandan's Gambler",
+    "slug": "nandans-gambler",
+    "scheme": "nandansgambler",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F7F5FF",
+    "icon": "./assets/icon.png",
+    "platforms": ["android", "ios"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F7F5FF",
+          "image": "./assets/adaptive-icon.png",
+          "imageWidth": 180
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "android": {
+      "package": "com.nandan.gambler",
+      "versionCode": 1,
+      "predictiveBackGestureEnabled": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F7F5FF"
+      },
+      "blockedPermissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ],
+      "permissions": []
+    },
+    "ios": {
+      "bundleIdentifier": "com.nandan.gambler",
+      "supportsTablet": false
+    },
+    "extra": {
+      "productKind": "play-money-social-casino"
+    }
+  }
+}
