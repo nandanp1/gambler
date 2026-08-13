@@ -1,13 +1,20 @@
 export type RandomSource = () => number;
 
+const clampRandom = (value: number): number => {
+  if (!Number.isFinite(value) || value <= 0) return 0;
+  return Math.min(value, 1 - Number.EPSILON);
+};
+
 export const randomInt = (min: number, max: number, random: RandomSource = Math.random): number =>
-  Math.floor(random() * (max - min + 1)) + min;
+  Math.floor(clampRandom(random()) * (max - min + 1)) + min;
 
 export const randomFloat = (min: number, max: number, random: RandomSource = Math.random): number =>
-  random() * (max - min) + min;
+  clampRandom(random()) * (max - min) + min;
 
-export const pickRandom = <T>(items: readonly T[], random: RandomSource = Math.random): T =>
-  items[Math.min(items.length - 1, Math.floor(random() * items.length))]!;
+export const pickRandom = <T>(items: readonly T[], random: RandomSource = Math.random): T => {
+  if (items.length === 0) throw new RangeError('Cannot pick from an empty collection.');
+  return items[Math.floor(clampRandom(random()) * items.length)]!;
+};
 
 export const shuffle = <T>(items: readonly T[], random: RandomSource = Math.random): T[] => {
   const next = [...items];
@@ -23,7 +30,10 @@ export const weightedPick = <T>(
   random: RandomSource = Math.random,
 ): T => {
   const total = items.reduce((sum, item) => sum + Math.max(0, item.weight), 0);
-  let cursor = random() * total;
+  if (items.length === 0 || total <= 0) {
+    throw new RangeError('weightedPick requires at least one positive weight.');
+  }
+  let cursor = clampRandom(random()) * total;
   for (const item of items) {
     cursor -= Math.max(0, item.weight);
     if (cursor < 0) return item.value;
