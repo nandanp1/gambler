@@ -1,2 +1,2 @@
 # gambler
-*adding soon/tomorrow
+*adding soon
