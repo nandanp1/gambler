@@ -34,9 +34,12 @@ export function KenoGameScreen() {
     if (busy) return;
     setResult(null);
     setRevealed(0);
-    if (selected.includes(number)) setSelected(selected.filter((item) => item !== number));
-    else if (selected.length < KENO_MAX_PICKS) setSelected([...selected, number].sort((a, b) => a - b));
-    else showToast(`Pick up to ${KENO_MAX_PICKS} numbers`);
+    setSelected((previous) => {
+      if (previous.includes(number)) return previous.filter((item) => item !== number);
+      if (previous.length < KENO_MAX_PICKS) return [...previous, number].sort((a, b) => a - b);
+      showToast(`Pick up to ${KENO_MAX_PICKS} numbers`);
+      return previous;
+    });
     haptic('selection');
   };
 
@@ -117,7 +120,7 @@ export function KenoGameScreen() {
   );
 
   const resultCopy = result && !busy
-    ? `${result.matches} match${result.matches === 1 ? '' : 'es'} · ${result.multiplier ? `${result.multiplier}× · +${formatCoins(result.payout)}` : 'No prize this draw'}`
+    ? `${result.matches} match${result.matches === 1 ? '' : 'es'} · ${result.multiplier ? `${result.multiplier}× · Return ${formatCoins(result.payout)}` : 'No prize this draw'}`
     : `${selected.length} selected · choose up to ${KENO_MAX_PICKS}`;
 
   return (

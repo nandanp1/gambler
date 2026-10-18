@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
@@ -9,7 +9,9 @@ import { colors, gradients, radius } from '@/theme';
 export function ClayToggle({ value, onValueChange, label }: { value: boolean; onValueChange: (value: boolean) => void; label: string }) {
   const { haptic } = useAppStore();
   const progress = useSharedValue(value ? 1 : 0);
-  progress.value = withSpring(value ? 1 : 0, { damping: 17, stiffness: 260 });
+  useEffect(() => {
+    progress.value = withSpring(value ? 1 : 0, { damping: 17, stiffness: 260 });
+  }, [progress, value]);
   const knobStyle = useAnimatedStyle(() => ({ transform: [{ translateX: progress.value * 24 }] }));
   return (
     <Pressable
